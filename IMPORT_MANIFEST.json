@@ -1,0 +1,116 @@
+{
+  "source_repository": "hwy0507/SII_compliance",
+  "source_commit": "08a9a1fb87a539966de27c14df27c23a8c58fe64",
+  "destination_repository": "hwy0507/fr3-compliance",
+  "date": "2026-11-17",
+  "hardware_ready": false,
+  "scope": "Frozen ESN64/16 FR3 integration candidate; source history and raw robot data excluded",
+  "files": [
+    {
+      "path": "docs/FR3_ESN_SIM2REAL_PREPARATION_20261117.md",
+      "bytes": 10926,
+      "sha256": "6aca9b08de0cc172d3d479b8b178bd74956a7981b9b25f26970abda7ffe7aa08"
+    },
+    {
+      "path": "docs/evidence/fr3_esn_port_20261117/OFFLINE_CHECKS.json",
+      "bytes": 2522,
+      "sha256": "9b3305794f5b807371d1e888d8172ab95503d897656c0f2511db59ee377295e4"
+    },
+    {
+      "path": "docs/evidence/fr3_esn_port_20261117/PROVENANCE.json",
+      "bytes": 1927,
+      "sha256": "05267d49280d80ca0e50b72bc4dd9dfc16089dc72ec469981c979e51c39044e3"
+    },
+    {
+      "path": "docs/evidence/fr3_esn_port_20261117/SANITIZER_CHECKS.json",
+      "bytes": 2456,
+      "sha256": "140847956972a55a52143af131bf63607ebbb7fefb0eb20915ebfbcc7dc01bcd"
+    },
+    {
+      "path": "tools/fr3_contact/active_vmc.hpp",
+      "bytes": 3505,
+      "sha256": "9bbb2b80a2578e7c0de686337af5559b4eec295663e8ad99215c40db4b1294f5"
+    },
+    {
+      "path": "tools/fr3_contact/check_offline.py",
+      "bytes": 8966,
+      "sha256": "67bec4bbd1940f7294b624c4e6f4a96aea16bbe5e007aa08cd7350d9fa3f5d12"
+    },
+    {
+      "path": "tools/fr3_contact/contact_core.hpp",
+      "bytes": 14472,
+      "sha256": "fa209b11f794e331376cb52e38d10e43b78333188db32ed2bdc18bbf10b4c2e7"
+    },
+    {
+      "path": "tools/fr3_contact/franka_adapter.hpp",
+      "bytes": 6936,
+      "sha256": "4e8370e751d096d818987941122ee432da59083f72cfd48407e1925fb2f196b8"
+    },
+    {
+      "path": "tools/fr3_contact/offline_test.cpp",
+      "bytes": 15583,
+      "sha256": "cc95f3ed5872a155f1739685d85d88d53f7ab257011003d4c087f5757d7237d5"
+    },
+    {
+      "path": "tools/fr3_contact/profile_generated.inc",
+      "bytes": 1742,
+      "sha256": "9bb700b39f98bdd20f42110a5d6d7778677265c1bd66749693c5101d3881a159"
+    },
+    {
+      "path": "tools/fr3_contact/regress_recorded_wrench.py",
+      "bytes": 9653,
+      "sha256": "242a2a113dda9519e53247420e47161a01eda9f459f89ad18d83739faccc8108"
+    },
+    {
+      "path": "tools/fr3_contact/reviewed_session.hpp",
+      "bytes": 4091,
+      "sha256": "ebe45980113a4bf59d802a56ff0e9ee165134d0cc81c078a99762320194acbb9"
+    },
+    {
+      "path": "tools/fr3_esn/README.md",
+      "bytes": 2809,
+      "sha256": "b427d47a978196820cc82702cdbb6524c28170aa876d8c4d1a1fc6f1513c3051"
+    },
+    {
+      "path": "tools/fr3_esn/check_offline.py",
+      "bytes": 6808,
+      "sha256": "ac73e2042ff1b8949ad99257a49bec3031b07f21ce5c5dbda44a778bb49da65e"
+    },
+    {
+      "path": "tools/fr3_esn/esn_actor.hpp",
+      "bytes": 2807,
+      "sha256": "5406d493088bcb073462638c9bf3b24b0243c4131645694c83b09f258f9dfeff"
+    },
+    {
+      "path": "tools/fr3_esn/esn_core.hpp",
+      "bytes": 11966,
+      "sha256": "28e277b9889451254fb2a3190a23c29c5a7cb632262c8be762df110308438cd0"
+    },
+    {
+      "path": "tools/fr3_esn/export_model.py",
+      "bytes": 2630,
+      "sha256": "60fb18c142cabe84e39b1357ed08f14c93313674a6088745319e89280c9e4921"
+    },
+    {
+      "path": "tools/fr3_esn/franka_session.hpp",
+      "bytes": 6490,
+      "sha256": "27252f0bd3c811c7c8ddd6f504c6bfc1d20fd601241dc8eeac2341cb018dc9cc"
+    },
+    {
+      "path": "tools/fr3_esn/model_generated.inc",
+      "bytes": 303185,
+      "sha256": "c4cf0c059c631f67588aca90c5d763b03c7e88cb4add984b58f630d7325e4eeb"
+    },
+    {
+      "path": "tools/fr3_esn/observer.hpp",
+      "bytes": 2064,
+      "sha256": "167eae84ceaa4d1c2ba953d4449f92d5469b29af9acd00d5c0e15f5a16a9cbc4"
+    },
+    {
+      "path": "tools/fr3_esn/offline_test.cpp",
+      "bytes": 7656,
+      "sha256": "bcd3f823300b5c1eb95b2314c0a4fa9c30cc65ef84d621b93756d6dbc45c3620"
+    }
+  ],
+  "local_includes_verified": 13
+}

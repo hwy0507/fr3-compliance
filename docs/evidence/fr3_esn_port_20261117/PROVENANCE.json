@@ -1,0 +1,35 @@
+{
+  "selected_seed": 45,
+  "checkpoint_sha256": "453543784cdba345046eb18227c0dec7202a1c4a24bf624445e6d3c518363ecd",
+  "archive_sha256": "f7c248362c28863420f1be9a3cc2c9c363ac29f72d9cbfd5ea2211aae279eecf",
+  "reference_sources": {
+    "runtime/input/office_vmc_memory_esn_20260927.py": "afcff76d7769d9453cd58a412d7c280a5d9355b4335fc7e318eec973d181c44a",
+    "runtime/frozen_source/scripts/haptic_vmc_teacher_20260916.py": "9a83937d3e547d29a0cf39fc7a6cc7affdc6b0a8cf9393e362a9f8040948dc10",
+    "runtime/frozen_source/scripts/validate_office_apparatus_v5_20260917.py": "b0131e9ee1ac063d0368bed704fba9dbe4e25d380bcbef09133e1b9ccb26e3f4",
+    "runtime/frozen_source/scripts/wbc_velocity_residual_core.py": "54eac86973b367eebe7a96ed6fa99bbdd43ec9ee6e89f0f76bfb8bb99cf16b49",
+    "runtime/frozen_source/scripts/audited_velocity_env.py": "abaa095d17dd1c2967e9c17e48d39b6b77049cb75e910deeb2842f907effcfbe"
+  },
+  "python": "3.10.22",
+  "compiler": "g++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+  "main_at_start": "c85594bc871293c3335c629c95649f2dfb25af98",
+  "main_rechecked": "8e13dafc1b9ebad3cced987f6f72dc5db2084bc9",
+  "baseline": "020448203ffd5fb50f81ffc7975b9ff5a2a06048",
+  "robot_connected": false,
+  "robot_parameters_written": false,
+  "live_motion": false,
+  "hardware_ready": false,
+  "server_archive": "not synced; arm1 SSH timed out",
+  "transfer_changes": [
+    "20kHz simulation observer to 1kHz hardware sampling",
+    "paper_mpc replaced with bounded resolved-rate WBC",
+    "conservative torque/speed envelope",
+    "simulation scene guards and gripper/task planner not transferred"
+  ],
+  "required_before_motion": [
+    "resolve unexplained no-contact reflex",
+    "payload/TCP and force-frame verification",
+    "passive/friction observer calibration and noise/delay validation",
+    "effective collision protections and stop behavior",
+    "realtime callback qualification and explicit test authorization"
+  ]
+}
