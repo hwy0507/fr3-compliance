@@ -1,0 +1,11 @@
+{
+  "scope": "Synthetic streaming trace only; no Robot",
+  "asan_ubsan": true,
+  "leak_sanitizer": false,
+  "exit_code": 0,
+  "tests": "linear, wrap, overflow, failed IO, concurrent 20000 rows",
+  "source_sha256": {
+    "tools/fr3_wrench_trace.hpp": "e4b50669251e74d9264139b39ca74ce705d0b68e09838afc991ee623389971b9",
+    "tools/fr3_native/trace_offline.cpp": "b66c4aff69d2232656b7dfe3b9655f8910883ff0d481fcd760203e9195808462"
+  }
+}

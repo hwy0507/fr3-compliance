@@ -1,0 +1,29 @@
+{
+  "scope": "New standalone checker integration failure, not a robot run",
+  "error": "Missing EIGEN_RUNTIME_NO_MALLOC in aggregate VMC synthetic-test compile",
+  "failing_commands": [
+    {
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-isystem",
+        "/usr/include/eigen3",
+        "-pthread",
+        "/home/airpig/\u684c\u9762/hwy/compliance_control/fr3-compliance/tools/fr3_contact/offline_test.cpp",
+        "-o",
+        "/home/airpig/\u684c\u9762/hwy/compliance_control/artifacts/fr3_afternoon_github_package_20261117_01/checks/vmc_core",
+        "-lfranka"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/airpig/\u684c\u9762/hwy/compliance_control/fr3-compliance/tools/fr3_contact/offline_test.cpp: In function \u2018void {anonymous}::tests()\u2019:\n/home/airpig/\u684c\u9762/hwy/compliance_control/fr3-compliance/tools/fr3_contact/offline_test.cpp:55:22: error: \u2018set_is_malloc_allowed\u2019 is not a member of \u2018Eigen::internal\u2019\n   55 |     Eigen::internal::set_is_malloc_allowed(false);\n      |                      ^~~~~~~~~~~~~~~~~~~~~\n/home/airpig/\u684c\u9762/hwy/compliance_control/fr3-compliance/tools/fr3_contact/offline_test.cpp:59:22: error: \u2018set_is_malloc_allowed\u2019 is not a member of \u2018Eigen::internal\u2019\n   59 |     Eigen::internal::set_is_malloc_allowed(true);\n      |                      ^~~~~~~~~~~~~~~~~~~~~\n"
+    }
+  ],
+  "fix": "Add original checker compile macro only to fr3_contact/offline_test.cpp target",
+  "upstream_numeric_sources_changed": false,
+  "first_failure_retained": true
+}

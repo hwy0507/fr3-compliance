@@ -5,3 +5,11 @@ build/
 artifacts/
 *.tar.gz
 *.npz
+
+/runs/
+/local_data/
+*.o
+*.so
+*.avi
+*.mkv
+*.mp4

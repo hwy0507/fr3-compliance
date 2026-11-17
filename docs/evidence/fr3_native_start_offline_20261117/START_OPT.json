@@ -1,0 +1,154 @@
+{
+  "scope": "Synthetic/local/blocked paths only; no Robot instance or real parameter setter",
+  "real_entry_both_builds_compiled_linked": true,
+  "execution_build_default": false,
+  "valid_live_entry_executed": false,
+  "hardware_connected": false,
+  "robot_parameters_written": false,
+  "sanitizers": false,
+  "leak_sanitizer_enabled": false,
+  "commands": [
+    {
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-isystem",
+        "/usr/include/eigen3",
+        "-pthread",
+        "/home/airpig/\u684c\u9762/hwy/compliance_control/SII_compliance/tools/fr3_native/start_offline.cpp",
+        "-o",
+        "/tmp/fr3-start-check-0py83njr/synthetic_gate",
+        "-lfranka"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/tmp/fr3-start-check-0py83njr/synthetic_gate"
+      ],
+      "returncode": 0,
+      "stdout": "PASS 25 synthetic start/operator checks; no Robot or setters\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/home/airpig/\u684c\u9762/hwy/compliance_control/SII_compliance/tools/fr3_native",
+        "-p",
+        "test_launch.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "STOP requested; wait for controller exit. This is not an emergency-stop acknowledgement.\nSTOP requested; wait for controller exit. This is not an emergency-stop acknowledgement.\n",
+      "stderr": "test_all_eight_collision_arrays_and_order_required (test_launch.LaunchTests.test_all_eight_collision_arrays_and_order_required) ... ok\ntest_duplicate_keys_nan_and_boolean_numbers_refused (test_launch.LaunchTests.test_duplicate_keys_nan_and_boolean_numbers_refused) ... ok\ntest_each_review_flag_is_required_and_boolean (test_launch.LaunchTests.test_each_review_flag_is_required_and_boolean) ... ok\ntest_expiry_and_lifetime_refused (test_launch.LaunchTests.test_expiry_and_lifetime_refused) ... ok\ntest_historical_or_defaults_not_current_sources (test_launch.LaunchTests.test_historical_or_defaults_not_current_sources) ... ok\ntest_light_push_requires_separate_authority (test_launch.LaunchTests.test_light_push_requires_separate_authority) ... ok\ntest_noninteractive_execute_cannot_start_or_create_run (test_launch.LaunchTests.test_noninteractive_execute_cannot_start_or_create_run) ... ok\ntest_other_robot_scope_boot_or_freshness_refused (test_launch.LaunchTests.test_other_robot_scope_boot_or_freshness_refused) ... ok\ntest_shipped_template_blocks_before_subprocess (test_launch.LaunchTests.test_shipped_template_blocks_before_subprocess) ... ok\ntest_source_hash_change_refused (test_launch.LaunchTests.test_source_hash_change_refused) ... ok\ntest_stiffness_must_match_source (test_launch.LaunchTests.test_stiffness_must_match_source) ... ok\ntest_stop_latch_is_idempotent_and_local (test_launch.LaunchTests.test_stop_latch_is_idempotent_and_local) ... ok\ntest_synthetic_complete_review_passes_local_validation (test_launch.LaunchTests.test_synthetic_complete_review_passes_local_validation) ... ok\ntest_terminal_handoff_uses_exec_not_a_killable_child (test_launch.LaunchTests.test_terminal_handoff_uses_exec_not_a_killable_child) ... ok\ntest_unknown_original_refused (test_launch.LaunchTests.test_unknown_original_refused) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 0.011s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "python",
+        "/home/airpig/\u684c\u9762/hwy/compliance_control/SII_compliance/tools/fr3_native/launch.py",
+        "check",
+        "/home/airpig/\u684c\u9762/hwy/compliance_control/SII_compliance/tools/fr3_native/REVIEW_TEMPLATE.json"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "BLOCKED before launch: review/authorization incomplete; no robot connection allowed\n"
+    },
+    {
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-isystem",
+        "/usr/include/eigen3",
+        "-pthread",
+        "-DFR3_NATIVE_EXECUTION_BUILD=0",
+        "/home/airpig/\u684c\u9762/hwy/compliance_control/SII_compliance/tools/fr3_native/controlled_start.cpp",
+        "-o",
+        "/tmp/fr3-start-check-0py83njr/controlled_start_0",
+        "-lfranka"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/tmp/fr3-start-check-0py83njr/controlled_start_0",
+        "--execute-reviewed",
+        "/tmp/fr3-start-check-0py83njr/bad_manifest_0.txt",
+        "/tmp/fr3-start-check-0py83njr/not_created"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "BLOCKED/STOPPED: execution build interlock OFF; no Robot constructed\n"
+    },
+    {
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-isystem",
+        "/usr/include/eigen3",
+        "-pthread",
+        "-DFR3_NATIVE_EXECUTION_BUILD=1",
+        "/home/airpig/\u684c\u9762/hwy/compliance_control/SII_compliance/tools/fr3_native/controlled_start.cpp",
+        "-o",
+        "/tmp/fr3-start-check-0py83njr/controlled_start_1",
+        "-lfranka"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/tmp/fr3-start-check-0py83njr/controlled_start_1",
+        "--execute-reviewed",
+        "/tmp/fr3-start-check-0py83njr/bad_manifest_1.txt",
+        "/tmp/fr3-start-check-0py83njr/not_created"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "BLOCKED/STOPPED: unknown start schema/mode\n"
+    },
+    {
+      "argv": [
+        "/tmp/fr3-start-check-0py83njr/controlled_start_1",
+        "--validate-manifest",
+        "/tmp/fr3-start-check-0py83njr/local_manifest.txt"
+      ],
+      "returncode": 0,
+      "stdout": "MANIFEST_VALID; no robot connection or parameter writes\n",
+      "stderr": ""
+    }
+  ],
+  "source_sha256": {
+    "tools/fr3_native/native_hold.hpp": "23e4268c2e54cad29520c772e32c1c59275015fd1437054e4b01f77c52b2d3c3",
+    "tools/fr3_native/operator_gate.hpp": "109294086e88e25067947e2970a81bb8fd03d82c977fb91d86c481a5efe76369",
+    "tools/fr3_native/start_protocol.hpp": "60562f28eba6ee0aaac81047ca8781473f5a3dd666e3a7eeef151d5cfd07bde7",
+    "tools/fr3_native/controlled_start.cpp": "d82ba5cfe7995e732483810f437d1e095fab4518a6643790eedc43b497793708",
+    "tools/fr3_native/offline.cpp": "2120989efbff369291187ef1febc1cc58606cf4916e0e8ae0177effff912998f",
+    "tools/fr3_native/start_offline.cpp": "58d7691565d7a8e8c028004dbe25e8ecfe2150e8ac77ce274ec00febb59be383",
+    "tools/fr3_native/check_offline.py": "3ced1ffc619be634a7c0103bf0cffb13e51d9c7abc4f575d1ea4ac45aa4b6dcd",
+    "tools/fr3_native/check_start_offline.py": "2328da2313447f9fcbfbccdd1fc7bf7e9e042b0b70737e1d2fd7ea3c9c938edd",
+    "tools/fr3_native/launch.py": "dcdda90f32373da226c139cd6827ce2a171abcb073e5e12cb6529e5324106c9e",
+    "tools/fr3_native/test_launch.py": "fbd5e091596f3427e9d6b5af8b5a8d0cc7be8cb65c2a0d5473db9b7ce8d28716",
+    "tools/fr3_native/REVIEW_TEMPLATE.json": "ecd610c1e4be271e830b60936a9bd1c530b16486bedd1f505f619847376f5e33"
+  }
+}

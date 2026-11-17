@@ -1,0 +1,242 @@
+{
+  "scope": "Standalone import, local include closure, synthetic/blocked tests only",
+  "passed": true,
+  "hardware_connected": false,
+  "motion_started": false,
+  "real_robot_parameters_written": false,
+  "network_settings_changed": false,
+  "sanitizers_this_run": false,
+  "source_sha256": {
+    "tools/analyze_fr3_static_recording_20261114.py": "ca47693a5d84485eac95c3ecce68abcfa3996278ff89f30045eb1eb29791adba",
+    "tools/check_package_offline.py": "2b5d721879b0e31ebae5b66e5472cf2b248fad0b1daa74d9d290d171c12707a1",
+    "tools/export_fr3_taught_plans_20261114.py": "09969901ca1f53f6304aea7ae17542bf40b7b9cddf089e4a8c88afc12cb95400",
+    "tools/fr3_comm/host_link.py": "4b15b9f018a8cbcb3c67fe1afa98c77c70d69f6feb1970c39c2c6bd3a7864725",
+    "tools/fr3_comm/read_only_probe.cpp": "638bd2a73ca40cf07e47019cd744c3b9632837af7e366273ac3b3c75a3a2a0f3",
+    "tools/fr3_comm/test_host_link.py": "ba22914eff25fbfbd1e1a382bb0b584164b4a371b68267e7ee1da28cf87b686e",
+    "tools/fr3_contact/active_vmc.hpp": "9bbb2b80a2578e7c0de686337af5559b4eec295663e8ad99215c40db4b1294f5",
+    "tools/fr3_contact/check_offline.py": "67bec4bbd1940f7294b624c4e6f4a96aea16bbe5e007aa08cd7350d9fa3f5d12",
+    "tools/fr3_contact/contact_core.hpp": "fa209b11f794e331376cb52e38d10e43b78333188db32ed2bdc18bbf10b4c2e7",
+    "tools/fr3_contact/franka_adapter.hpp": "4e8370e751d096d818987941122ee432da59083f72cfd48407e1925fb2f196b8",
+    "tools/fr3_contact/offline_test.cpp": "cc95f3ed5872a155f1739685d85d88d53f7ab257011003d4c087f5757d7237d5",
+    "tools/fr3_contact/profile_generated.inc": "9bb700b39f98bdd20f42110a5d6d7778677265c1bd66749693c5101d3881a159",
+    "tools/fr3_contact/regress_recorded_wrench.py": "242a2a113dda9519e53247420e47161a01eda9f459f89ad18d83739faccc8108",
+    "tools/fr3_contact/reviewed_session.hpp": "ebe45980113a4bf59d802a56ff0e9ee165134d0cc81c078a99762320194acbb9",
+    "tools/fr3_esn/check_offline.py": "ac73e2042ff1b8949ad99257a49bec3031b07f21ce5c5dbda44a778bb49da65e",
+    "tools/fr3_esn/esn_actor.hpp": "5406d493088bcb073462638c9bf3b24b0243c4131645694c83b09f258f9dfeff",
+    "tools/fr3_esn/esn_core.hpp": "28e277b9889451254fb2a3190a23c29c5a7cb632262c8be762df110308438cd0",
+    "tools/fr3_esn/export_model.py": "60fb18c142cabe84e39b1357ed08f14c93313674a6088745319e89280c9e4921",
+    "tools/fr3_esn/franka_session.hpp": "27252f0bd3c811c7c8ddd6f504c6bfc1d20fd601241dc8eeac2341cb018dc9cc",
+    "tools/fr3_esn/model_generated.inc": "c4cf0c059c631f67588aca90c5d763b03c7e88cb4add984b58f630d7325e4eeb",
+    "tools/fr3_esn/observer.hpp": "167eae84ceaa4d1c2ba953d4449f92d5469b29af9acd00d5c0e15f5a16a9cbc4",
+    "tools/fr3_esn/offline_test.cpp": "bcd3f823300b5c1eb95b2314c0a4fa9c30cc65ef84d621b93756d6dbc45c3620",
+    "tools/fr3_native/REVIEW_TEMPLATE.json": "ecd610c1e4be271e830b60936a9bd1c530b16486bedd1f505f619847376f5e33",
+    "tools/fr3_native/check_offline.py": "3ced1ffc619be634a7c0103bf0cffb13e51d9c7abc4f575d1ea4ac45aa4b6dcd",
+    "tools/fr3_native/check_start_offline.py": "6de292a8f5073cf0dbf96daa8b579e8a07be3bc5598445bc4985562f8af1e627",
+    "tools/fr3_native/controlled_start.cpp": "f790805102ecceb303087305c8993485209539a8f1eea19028ede0f5aaeb39cd",
+    "tools/fr3_native/guiding_offline.cpp": "7a673c4180c8168c71fedc1b6986ca422372cab9463eb8014d78e09b218819b1",
+    "tools/fr3_native/launch.py": "b2ae62643a39391dcf2b5d8be8d2b53c88a4c533f9b1f2f05e9e55f412b68bb4",
+    "tools/fr3_native/native_hold.hpp": "50188f5e8a9832d33ed5559c37b93136c46fcbe2ee30cd43c08ceced585fc29a",
+    "tools/fr3_native/offline.cpp": "fd0cbef27ab5f409d8d915e9de8470c59d9266c1f831b0cbed697bbef7a15895",
+    "tools/fr3_native/operator_gate.hpp": "6e9aa8d5cb79b6659f6087f313a1deaa0dd6d12f19fcceb782da87fda9a331da",
+    "tools/fr3_native/start_offline.cpp": "63d74b7301d8de294fc47951128383cbdf5b5e4e0feef316d6b41ba7e7b56426",
+    "tools/fr3_native/start_protocol.hpp": "faf759a7ee71f9560c2089218774ed89acd1312e20d41129c37661a72ba2c052",
+    "tools/fr3_native/test_launch.py": "efe607da49f3705200bb6d6ac54ac03fe7c8645c061e5c6b6ea5e6e543ad2526",
+    "tools/fr3_native/trace_offline.cpp": "b66c4aff69d2232656b7dfe3b9655f8910883ff0d481fcd760203e9195808462",
+    "tools/fr3_taught_path.cpp": "ffee4175ab3772fa3fbd0967e53e46cc5bdc18a0d383e65be2928f0d90f053bd",
+    "tools/fr3_wrench_trace.hpp": "e4b50669251e74d9264139b39ca74ce705d0b68e09838afc991ee623389971b9",
+    "tools/prepare_fr3_teaching_candidates_20261114.py": "a229788913b819137d45d12bb91b4dc3cd7c5142e20036034769880cabec27e0",
+    "tools/read_fr3_static_model_20261114.py": "3791ee2918350b2eb310ff6ec61b9a92862681066eb87315ac401da262e25050",
+    "tools/test_fr3_taught_path_offline.cpp": "463e9ebdabf0f6f10af577b184c899c60b79b6fb754aac5f177a68aeaf44f077",
+    "tools/test_fr3_teaching_plans_offline.py": "370c2e6100442bce1dbb79e2966cc96d3e309fda5a248a9542643ad7ba70ecc1",
+    "tools/test_fr3_wrench_trace_offline.cpp": "0eb3ee272bcb17b0f3dbdffdf14905e1cea9bc85298e182421f51f65557eec08"
+  },
+  "commands": [
+    {
+      "argv": [
+        "/home/airpig/miniforge3/envs/sii/bin/python",
+        "/home/airpig/\u684c\u9762/hwy/compliance_control/fr3-compliance/tools/fr3_native/check_offline.py",
+        "--evidence",
+        "/home/airpig/\u684c\u9762/hwy/compliance_control/artifacts/fr3_afternoon_github_package_20261117_01/checks03/native_core.json"
+      ],
+      "returncode": 0,
+      "stdout": "PASS 92999 native guard/transaction assertions; synthetic only; no Robot, control or parameter writes.\nOFFLINE ONLY; native session not authorized or executed.\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/airpig/miniforge3/envs/sii/bin/python",
+        "/home/airpig/\u684c\u9762/hwy/compliance_control/fr3-compliance/tools/fr3_native/check_start_offline.py",
+        "--evidence",
+        "/home/airpig/\u684c\u9762/hwy/compliance_control/artifacts/fr3_afternoon_github_package_20261117_01/checks03/native_start.json"
+      ],
+      "returncode": 0,
+      "stdout": "PASS controlled-start local/blocked/operator checks; no robot or parameter writes\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/airpig/miniforge3/envs/sii/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/fr3_comm",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_disable_failures_are_rejected (test_host_link.EeeReadbackTests) ... ok\ntest_disabled_advertisement_retained_is_valid (test_host_link.EeeReadbackTests) ... ok\ntest_disabled_advertisement_zero_is_valid (test_host_link.EeeReadbackTests) ... ok\ntest_enabled_original_is_valid (test_host_link.EeeReadbackTests) ... ok\ntest_existing_backup_never_overwritten_and_setter_not_called (test_host_link.EeeReadbackTests) ... ok\ntest_restore_must_restore_advertisement (test_host_link.EeeReadbackTests) ... ok\ntest_restore_negotiation_not_yet_active_is_valid (test_host_link.EeeReadbackTests) ... ok\ntest_setter_preserves_original_payload_and_checks_actual_result (test_host_link.EeeReadbackTests) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.002s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-isystem",
+        "/usr/include/eigen3",
+        "-pthread",
+        "/home/airpig/\u684c\u9762/hwy/compliance_control/fr3-compliance/tools/fr3_taught_path.cpp",
+        "-o",
+        "/home/airpig/\u684c\u9762/hwy/compliance_control/artifacts/fr3_afternoon_github_package_20261117_01/checks03/taught_path",
+        "-lfranka"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-isystem",
+        "/usr/include/eigen3",
+        "-pthread",
+        "/home/airpig/\u684c\u9762/hwy/compliance_control/fr3-compliance/tools/test_fr3_taught_path_offline.cpp",
+        "-o",
+        "/home/airpig/\u684c\u9762/hwy/compliance_control/artifacts/fr3_afternoon_github_package_20261117_01/checks03/taught_math",
+        "-lfranka"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-isystem",
+        "/usr/include/eigen3",
+        "-pthread",
+        "/home/airpig/\u684c\u9762/hwy/compliance_control/fr3-compliance/tools/test_fr3_wrench_trace_offline.cpp",
+        "-o",
+        "/home/airpig/\u684c\u9762/hwy/compliance_control/artifacts/fr3_afternoon_github_package_20261117_01/checks03/wrench_trace",
+        "-lfranka"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-isystem",
+        "/usr/include/eigen3",
+        "-pthread",
+        "/home/airpig/\u684c\u9762/hwy/compliance_control/fr3-compliance/tools/fr3_comm/read_only_probe.cpp",
+        "-o",
+        "/home/airpig/\u684c\u9762/hwy/compliance_control/artifacts/fr3_afternoon_github_package_20261117_01/checks03/read_only_probe",
+        "-lfranka"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-isystem",
+        "/usr/include/eigen3",
+        "-pthread",
+        "-DEIGEN_RUNTIME_NO_MALLOC",
+        "/home/airpig/\u684c\u9762/hwy/compliance_control/fr3-compliance/tools/fr3_contact/offline_test.cpp",
+        "-o",
+        "/home/airpig/\u684c\u9762/hwy/compliance_control/artifacts/fr3_afternoon_github_package_20261117_01/checks03/vmc_core",
+        "-lfranka"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/airpig/\u684c\u9762/hwy/compliance_control/artifacts/fr3_afternoon_github_package_20261117_01/checks03/taught_math"
+      ],
+      "returncode": 0,
+      "stdout": "Offline math, fixed/all-joint, stale-reference reproduction, startup guards and diagnostics tests passed.\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/airpig/\u684c\u9762/hwy/compliance_control/artifacts/fr3_afternoon_github_package_20261117_01/checks03/wrench_trace",
+        "/home/airpig/\u684c\u9762/hwy/compliance_control/artifacts/fr3_afternoon_github_package_20261117_01/checks03/synthetic_trace"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: per-callback fields, raw NaN, fault state, bounded overflow, CSV schema and SDK-only reflex tail; no hardware.\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/airpig/\u684c\u9762/hwy/compliance_control/artifacts/fr3_afternoon_github_package_20261117_01/checks03/vmc_core"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: 13845 assertions; bounded contact, faults, limits, active chain, frame/torque conventions.\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/airpig/miniforge3/envs/sii/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools",
+        "-p",
+        "test_fr3_teaching_plans_offline.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "Two plans exported for review; no hardware connection or execution.\nTwo plans exported for review; no hardware connection or execution.\nTwo plans exported for review; no hardware connection or execution.\n",
+      "stderr": "test_all_seven_joints_preserved_and_cpp_parses (test_fr3_teaching_plans_offline.PlanTests) ... ok\ntest_fixed_j1_legacy_remains_explicit (test_fr3_teaching_plans_offline.PlanTests) ... ok\ntest_nonintegral_duration_has_no_short_terminal_interval (test_fr3_teaching_plans_offline.PlanTests) ... ok\ntest_relabel_moving_j1_as_held_rejected (test_fr3_teaching_plans_offline.PlanTests) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.049s\n\nOK\n"
+    }
+  ],
+  "not_repeated": [
+    "ESN original-bundle parity (external bundle required)",
+    "VMC original-Python parity (upstream research sources required)"
+  ],
+  "limitations": [
+    "not physical contact, real-time, load or stopping validation"
+  ]
+}

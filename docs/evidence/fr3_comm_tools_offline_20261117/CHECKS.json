@@ -1,0 +1,28 @@
+{
+  "scope": "Offline EEE regression tests and compiled read-only probe audit; no hardware writes during checks",
+  "tests_passed": 8,
+  "tests_stderr": "test_disable_failures_are_rejected (test_host_link.EeeReadbackTests.test_disable_failures_are_rejected) ... ok\ntest_disabled_advertisement_retained_is_valid (test_host_link.EeeReadbackTests.test_disabled_advertisement_retained_is_valid) ... ok\ntest_disabled_advertisement_zero_is_valid (test_host_link.EeeReadbackTests.test_disabled_advertisement_zero_is_valid) ... ok\ntest_enabled_original_is_valid (test_host_link.EeeReadbackTests.test_enabled_original_is_valid) ... ok\ntest_existing_backup_never_overwritten_and_setter_not_called (test_host_link.EeeReadbackTests.test_existing_backup_never_overwritten_and_setter_not_called) ... ok\ntest_restore_must_restore_advertisement (test_host_link.EeeReadbackTests.test_restore_must_restore_advertisement) ... ok\ntest_restore_negotiation_not_yet_active_is_valid (test_host_link.EeeReadbackTests.test_restore_negotiation_not_yet_active_is_valid) ... ok\ntest_setter_preserves_original_payload_and_checks_actual_result (test_host_link.EeeReadbackTests.test_setter_preserves_original_payload_and_checks_actual_result) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.002s\n\nOK\n",
+  "compile_flags": [
+    "-std=c++17",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror"
+  ],
+  "probe_forbidden_imports_absent": true,
+  "probe_hardware_API_allowlist": [
+    "Robot constructor kEnforce",
+    "read",
+    "readOnce",
+    "loadModel",
+    "getLowerJointVelocityLimits",
+    "getUpperJointVelocityLimits",
+    "local zeroJacobian/coriolis"
+  ],
+  "source_sha256": {
+    "tools/fr3_comm/host_link.py": "4b15b9f018a8cbcb3c67fe1afa98c77c70d69f6feb1970c39c2c6bd3a7864725",
+    "tools/fr3_comm/read_only_probe.cpp": "638bd2a73ca40cf07e47019cd744c3b9632837af7e366273ac3b3c75a3a2a0f3",
+    "tools/fr3_comm/test_host_link.py": "ba22914eff25fbfbd1e1a382bb0b584164b4a371b68267e7ee1da28cf87b686e"
+  },
+  "real_communication_or_motion_qualified": false
+}

@@ -1,0 +1,51 @@
+{
+  "scope": "Synthetic native-impedance guard and fake stiffness transaction checks only",
+  "hardware_connected": false,
+  "motion_started": false,
+  "real_parameter_setter_called": false,
+  "real_native_session_linked_but_never_invoked": true,
+  "live_cli_present": false,
+  "sanitizers": false,
+  "leak_sanitizer_enabled": false,
+  "compiler_flags": [
+    "g++",
+    "-std=c++17",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-DEIGEN_RUNTIME_NO_MALLOC",
+    "-isystem",
+    "/usr/include/eigen3"
+  ],
+  "tests_stdout": "PASS 77480 native guard/transaction assertions; synthetic only; no Robot, control or parameter writes.\n",
+  "proposal_stdout": "K axes: [300,300,800] N/m; [50,50,50] Nm/rad\nFixed reference, command speed 0; measured TCP 0.05m/s, angular 0.2rad/s, joint 0.15rad/s\nXY push suggestion 1-3N; delta stop 4N, absolute stop 6N / 1.5Nm; offset 15mm\n3s no-contact settling, max 2s contact, max 15s session; review defaults FALSE\n",
+  "rejected_cli_arguments": [
+    [
+      "172.16.0.2"
+    ],
+    [
+      "--execute-reviewed"
+    ],
+    [
+      "--execute-reviewed",
+      "172.16.0.2"
+    ]
+  ],
+  "source_sha256": {
+    "tools/fr3_native/native_hold.hpp": "8a53adf3a8206ca344a29855d1949b1bbd87c8d5e4716a7397fe73c994b6df74",
+    "tools/fr3_native/offline.cpp": "2120989efbff369291187ef1febc1cc58606cf4916e0e8ae0177effff912998f",
+    "tools/fr3_native/check_offline.py": "3ced1ffc619be634a7c0103bf0cffb13e51d9c7abc4f575d1ea4ac45aa4b6dcd",
+    "tools/fr3_wrench_trace.hpp": "8da9df6675eb758eca534e7f4de00d023672fa4d963d8dc7e956c4f9269e9650",
+    "tools/fr3_contact/active_vmc.hpp": "9bbb2b80a2578e7c0de686337af5559b4eec295663e8ad99215c40db4b1294f5",
+    "tools/fr3_contact/contact_core.hpp": "fa209b11f794e331376cb52e38d10e43b78333188db32ed2bdc18bbf10b4c2e7",
+    "tools/fr3_contact/franka_adapter.hpp": "4e8370e751d096d818987941122ee432da59083f72cfd48407e1925fb2f196b8",
+    "tools/fr3_contact/reviewed_session.hpp": "ebe45980113a4bf59d802a56ff0e9ee165134d0cc81c078a99762320194acbb9",
+    "tools/fr3_contact/profile_generated.inc": "9bb700b39f98bdd20f42110a5d6d7778677265c1bd66749693c5101d3881a159"
+  },
+  "limitations": [
+    "no physical native controller, force accuracy, real-time or stopping validation",
+    "proposal is an engineering starting point, not vendor-certified contact limits",
+    "baseline, original stiffness, tool, protection, site and live authorization remain required"
+  ]
+}

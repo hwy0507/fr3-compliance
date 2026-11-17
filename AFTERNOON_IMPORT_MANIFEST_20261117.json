@@ -1,0 +1,318 @@
+{
+  "date": "2026-11-17",
+  "timezone": "Asia/Shanghai",
+  "source_repository": "hwy0507/SII_compliance",
+  "source_commit": "b36ea725b872e1df12abd5e1196b6d565f672487",
+  "destination_repository": "hwy0507/fr3-compliance",
+  "destination_base_commit": "cbe3acec15826d8adeb5eddb6810547ceee8c036",
+  "import_type": "byte-for-byte committed source and historical synthetic evidence",
+  "new_imports": [
+    {
+      "path": "code/mujoco_6d_vmc_benchmark/deploy/__init__.py",
+      "bytes": 541,
+      "sha256": "162ed10de3243ab771bc765bbd9c54926e9dbb7529a6258fac97dc910be82919"
+    },
+    {
+      "path": "code/mujoco_6d_vmc_benchmark/deploy/capture.py",
+      "bytes": 5501,
+      "sha256": "e09497c76111db5f59e1b12cacd6c9661500b4086787557100ec8038699d2ef9"
+    },
+    {
+      "path": "code/mujoco_6d_vmc_benchmark/deploy/contracts.py",
+      "bytes": 3398,
+      "sha256": "5b2609bc6a7cdac4ecf6edbd146ef9eb0db08833197a47059d73a307c4253f45"
+    },
+    {
+      "path": "code/mujoco_6d_vmc_benchmark/deploy/record_open_loop.py",
+      "bytes": 3506,
+      "sha256": "bf59c293250004a6bdcb5729bc832fcd1e07568c0a8a0ee1c779e78ad251420e"
+    },
+    {
+      "path": "code/mujoco_6d_vmc_benchmark/deploy/record_teaching.py",
+      "bytes": 8326,
+      "sha256": "05e9d833ace076cc3e6b44fd59b00a9587700793169e19b2f6654b3da5d1c16f"
+    },
+    {
+      "path": "code/mujoco_6d_vmc_benchmark/deploy/recording.py",
+      "bytes": 6363,
+      "sha256": "c4c768b9e0a7986fa5f7f29de95e0f72baae9889c3f7a56847a17e27cb672608"
+    },
+    {
+      "path": "code/mujoco_6d_vmc_benchmark/deploy/review_teaching.py",
+      "bytes": 6920,
+      "sha256": "4170a43e9acef932ffd15732f702b7d3db5f46ec9fdfe561117fbae3842212c6"
+    },
+    {
+      "path": "code/mujoco_6d_vmc_benchmark/deploy/teaching_reference.py",
+      "bytes": 2986,
+      "sha256": "9bf21c4b38ceb6447ad1fba88424cb761d8219b42a8b72b3ec5ce7f408db132e"
+    },
+    {
+      "path": "docs/FR3_FCI_COMMUNICATION_DIAGNOSTICS_20261117.md",
+      "bytes": 4306,
+      "sha256": "326211a6793fa925ad3e4389762e0feef6a1c665925a4b19b834e5f7a3741fb2"
+    },
+    {
+      "path": "docs/FR3_NATIVE_CARTESIAN_HOLD_PROPOSAL_20261117.md",
+      "bytes": 10715,
+      "sha256": "c1629263e1c8bdb8110de8d696ef44373cfb85156afbf54f06254f05d88c53cd"
+    },
+    {
+      "path": "docs/FR3_NATIVE_CONTROLLED_START_20261117.md",
+      "bytes": 9043,
+      "sha256": "e5e1dc1f2d7bf9f5438036d46aec262f2c0adc59cacc3f81c006dc9870d11c72"
+    },
+    {
+      "path": "docs/FR3_NATIVE_RETAIN_TRIAL_20261117.md",
+      "bytes": 10681,
+      "sha256": "a956fca9b3b1f812c941c8dff2c025dc21a08405de3dc8c3fc34bd69b4723988"
+    },
+    {
+      "path": "docs/FR3_WRENCH_REFERENCE_FIX_20261115.md",
+      "bytes": 9078,
+      "sha256": "699e4270e1c7e9e50506b9fc21dee68856edc6eed5fa59d6dd93bc0a9ab62962"
+    },
+    {
+      "path": "docs/FR3_WRENCH_TRACE_20261117.md",
+      "bytes": 5711,
+      "sha256": "d1e53953fa245b425cd764e0a0ca5fb3e4e27520f066af7e1b22c13ceeced7bd"
+    },
+    {
+      "path": "docs/evidence/fr3_comm_tools_offline_20261117/CHECKS.json",
+      "bytes": 2093,
+      "sha256": "1c6030d9fb7e285f86efdcbe67ed6f1be6fdc0265afd652caa75ae72154fbfa3"
+    },
+    {
+      "path": "docs/evidence/fr3_native_cartesian_offline_20261117/OFFLINE_CHECKS.json",
+      "bytes": 2435,
+      "sha256": "22a006b0ac58359dbbcec3871c62ec65e9ad638464f2d34a49b4e15c80288967"
+    },
+    {
+      "path": "docs/evidence/fr3_native_cartesian_offline_20261117/SANITIZER_CHECKS.json",
+      "bytes": 2501,
+      "sha256": "d2d4e9d24bc2da386c4312a6fa4386a641fa69d9315495ba50726af0c1bfae97"
+    },
+    {
+      "path": "docs/evidence/fr3_native_moment05_candidate_20261117/core_checks.json",
+      "bytes": 3101,
+      "sha256": "7fad21f8bb659e67edaf2465dbf90270d69fa1ea384bae8f82d8fed35513fc76"
+    },
+    {
+      "path": "docs/evidence/fr3_native_moment05_candidate_20261117/start_checks.json",
+      "bytes": 9169,
+      "sha256": "aa8c592cc7d08c1f0d32258442bc97e84d7186c3e0cd2a71eb3c7b41c369f54a"
+    },
+    {
+      "path": "docs/evidence/fr3_native_moment10_candidate_20261117/core_checks.json",
+      "bytes": 3101,
+      "sha256": "34383d02dce6d405285ebf5305559458713298e366b9d010b0f8e209f57e20f9"
+    },
+    {
+      "path": "docs/evidence/fr3_native_moment10_candidate_20261117/start_checks.json",
+      "bytes": 9169,
+      "sha256": "ce611c059e978c06e50e72fe2120a05b49f65badef8b41b68373ba867391ad5d"
+    },
+    {
+      "path": "docs/evidence/fr3_native_retain_offline_20261117/CORE_CHECKS.json",
+      "bytes": 3101,
+      "sha256": "3a07ae9f654d1359cc37c8edf01433ef0d789e9ba4f884cad298836db4559169"
+    },
+    {
+      "path": "docs/evidence/fr3_native_retain_offline_20261117/START_CHECKS.json",
+      "bytes": 9169,
+      "sha256": "9dc098b9053b33e677bc121588b5f7c9e6d537ab8c40623c7323a44921cef044"
+    },
+    {
+      "path": "docs/evidence/fr3_native_retain_offline_20261117/STREAMING_ASAN.json",
+      "bytes": 432,
+      "sha256": "b438890a788b05f881c5f4ab5c7029e95357a93a6bfa67315abaa8d1bc2cabd2"
+    },
+    {
+      "path": "docs/evidence/fr3_native_start_offline_20261117/CORE_ASAN.json",
+      "bytes": 2945,
+      "sha256": "5b472e10b2b7f56a6cf47aeefd33c9d4bb3b5a0732e91db1f03787ad278f2de7"
+    },
+    {
+      "path": "docs/evidence/fr3_native_start_offline_20261117/CORE_OPT.json",
+      "bytes": 2879,
+      "sha256": "aa1ac843376c01e19d805fb0178be3b18ffc58274c29d8ef779fad5a7a4cfdf5"
+    },
+    {
+      "path": "docs/evidence/fr3_native_start_offline_20261117/START_ASAN.json",
+      "bytes": 7483,
+      "sha256": "a8e34d8c14ee6818c0787131bb15bdff13fd11bc5d2623cc69dfbcebb863fe9a"
+    },
+    {
+      "path": "docs/evidence/fr3_native_start_offline_20261117/START_OPT.json",
+      "bytes": 7259,
+      "sha256": "fd647cb4cf18789374004043379afea1e8c9b8e76d912a1b41f095bcecd5c00e"
+    },
+    {
+      "path": "docs/evidence/fr3_wrench_trace_offline_20261117/CHECKS.json",
+      "bytes": 1879,
+      "sha256": "d0a563ff25869a9e942eceb987891e4307de9f07a969da3f2058fcee258b0577"
+    },
+    {
+      "path": "tools/analyze_fr3_static_recording_20261114.py",
+      "bytes": 6569,
+      "sha256": "ca47693a5d84485eac95c3ecce68abcfa3996278ff89f30045eb1eb29791adba"
+    },
+    {
+      "path": "tools/export_fr3_taught_plans_20261114.py",
+      "bytes": 3583,
+      "sha256": "09969901ca1f53f6304aea7ae17542bf40b7b9cddf089e4a8c88afc12cb95400"
+    },
+    {
+      "path": "tools/fr3_comm/host_link.py",
+      "bytes": 4304,
+      "sha256": "4b15b9f018a8cbcb3c67fe1afa98c77c70d69f6feb1970c39c2c6bd3a7864725"
+    },
+    {
+      "path": "tools/fr3_comm/read_only_probe.cpp",
+      "bytes": 4086,
+      "sha256": "638bd2a73ca40cf07e47019cd744c3b9632837af7e366273ac3b3c75a3a2a0f3"
+    },
+    {
+      "path": "tools/fr3_comm/test_host_link.py",
+      "bytes": 2947,
+      "sha256": "ba22914eff25fbfbd1e1a382bb0b584164b4a371b68267e7ee1da28cf87b686e"
+    },
+    {
+      "path": "tools/fr3_native/REVIEW_TEMPLATE.json",
+      "bytes": 1107,
+      "sha256": "ecd610c1e4be271e830b60936a9bd1c530b16486bedd1f505f619847376f5e33"
+    },
+    {
+      "path": "tools/fr3_native/check_offline.py",
+      "bytes": 3397,
+      "sha256": "3ced1ffc619be634a7c0103bf0cffb13e51d9c7abc4f575d1ea4ac45aa4b6dcd"
+    },
+    {
+      "path": "tools/fr3_native/check_start_offline.py",
+      "bytes": 4649,
+      "sha256": "6de292a8f5073cf0dbf96daa8b579e8a07be3bc5598445bc4985562f8af1e627"
+    },
+    {
+      "path": "tools/fr3_native/controlled_start.cpp",
+      "bytes": 14140,
+      "sha256": "f790805102ecceb303087305c8993485209539a8f1eea19028ede0f5aaeb39cd"
+    },
+    {
+      "path": "tools/fr3_native/guiding_offline.cpp",
+      "bytes": 8746,
+      "sha256": "7a673c4180c8168c71fedc1b6986ca422372cab9463eb8014d78e09b218819b1"
+    },
+    {
+      "path": "tools/fr3_native/launch.py",
+      "bytes": 15335,
+      "sha256": "b2ae62643a39391dcf2b5d8be8d2b53c88a4c533f9b1f2f05e9e55f412b68bb4"
+    },
+    {
+      "path": "tools/fr3_native/native_hold.hpp",
+      "bytes": 28906,
+      "sha256": "50188f5e8a9832d33ed5559c37b93136c46fcbe2ee30cd43c08ceced585fc29a"
+    },
+    {
+      "path": "tools/fr3_native/offline.cpp",
+      "bytes": 11977,
+      "sha256": "fd0cbef27ab5f409d8d915e9de8470c59d9266c1f831b0cbed697bbef7a15895"
+    },
+    {
+      "path": "tools/fr3_native/operator_gate.hpp",
+      "bytes": 2500,
+      "sha256": "6e9aa8d5cb79b6659f6087f313a1deaa0dd6d12f19fcceb782da87fda9a331da"
+    },
+    {
+      "path": "tools/fr3_native/start_offline.cpp",
+      "bytes": 5875,
+      "sha256": "63d74b7301d8de294fc47951128383cbdf5b5e4e0feef316d6b41ba7e7b56426"
+    },
+    {
+      "path": "tools/fr3_native/start_protocol.hpp",
+      "bytes": 5647,
+      "sha256": "faf759a7ee71f9560c2089218774ed89acd1312e20d41129c37661a72ba2c052"
+    },
+    {
+      "path": "tools/fr3_native/test_launch.py",
+      "bytes": 11577,
+      "sha256": "efe607da49f3705200bb6d6ac54ac03fe7c8645c061e5c6b6ea5e6e543ad2526"
+    },
+    {
+      "path": "tools/fr3_native/trace_offline.cpp",
+      "bytes": 2014,
+      "sha256": "b66c4aff69d2232656b7dfe3b9655f8910883ff0d481fcd760203e9195808462"
+    },
+    {
+      "path": "tools/fr3_taught_path.cpp",
+      "bytes": 14747,
+      "sha256": "ffee4175ab3772fa3fbd0967e53e46cc5bdc18a0d383e65be2928f0d90f053bd"
+    },
+    {
+      "path": "tools/fr3_wrench_trace.hpp",
+      "bytes": 7179,
+      "sha256": "e4b50669251e74d9264139b39ca74ce705d0b68e09838afc991ee623389971b9"
+    },
+    {
+      "path": "tools/prepare_fr3_teaching_candidates_20261114.py",
+      "bytes": 10343,
+      "sha256": "a229788913b819137d45d12bb91b4dc3cd7c5142e20036034769880cabec27e0"
+    },
+    {
+      "path": "tools/read_fr3_static_model_20261114.py",
+      "bytes": 3405,
+      "sha256": "3791ee2918350b2eb310ff6ec61b9a92862681066eb87315ac401da262e25050"
+    },
+    {
+      "path": "tools/test_fr3_taught_path_offline.cpp",
+      "bytes": 3232,
+      "sha256": "463e9ebdabf0f6f10af577b184c899c60b79b6fb754aac5f177a68aeaf44f077"
+    },
+    {
+      "path": "tools/test_fr3_teaching_plans_offline.py",
+      "bytes": 4733,
+      "sha256": "370c2e6100442bce1dbb79e2966cc96d3e309fda5a248a9542643ad7ba70ecc1"
+    },
+    {
+      "path": "tools/test_fr3_wrench_trace_offline.cpp",
+      "bytes": 2707,
+      "sha256": "0eb3ee272bcb17b0f3dbdffdf14905e1cea9bc85298e182421f51f65557eec08"
+    }
+  ],
+  "existing_shared_dependencies_verified_identical": [
+    {
+      "path": "tools/fr3_contact/active_vmc.hpp",
+      "sha256": "9bbb2b80a2578e7c0de686337af5559b4eec295663e8ad99215c40db4b1294f5"
+    },
+    {
+      "path": "tools/fr3_contact/check_offline.py",
+      "sha256": "67bec4bbd1940f7294b624c4e6f4a96aea16bbe5e007aa08cd7350d9fa3f5d12"
+    },
+    {
+      "path": "tools/fr3_contact/contact_core.hpp",
+      "sha256": "fa209b11f794e331376cb52e38d10e43b78333188db32ed2bdc18bbf10b4c2e7"
+    },
+    {
+      "path": "tools/fr3_contact/franka_adapter.hpp",
+      "sha256": "4e8370e751d096d818987941122ee432da59083f72cfd48407e1925fb2f196b8"
+    },
+    {
+      "path": "tools/fr3_contact/offline_test.cpp",
+      "sha256": "cc95f3ed5872a155f1739685d85d88d53f7ab257011003d4c087f5757d7237d5"
+    },
+    {
+      "path": "tools/fr3_contact/profile_generated.inc",
+      "sha256": "9bb700b39f98bdd20f42110a5d6d7778677265c1bd66749693c5101d3881a159"
+    },
+    {
+      "path": "tools/fr3_contact/regress_recorded_wrench.py",
+      "sha256": "242a2a113dda9519e53247420e47161a01eda9f459f89ad18d83739faccc8108"
+    },
+    {
+      "path": "tools/fr3_contact/reviewed_session.hpp",
+      "sha256": "ebe45980113a4bf59d802a56ff0e9ee165134d0cc81c078a99762320194acbb9"
+    }
+  ],
+  "existing_esn_files_overwritten": false,
+  "hardware_qualified": false,
+  "raw_trajectories_zero_records_credentials_live_review_files_included": false
+}

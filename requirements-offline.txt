@@ -1,0 +1,4 @@
+# Exact NumPy/SciPy versions used for this offline package check.
+# C++17, Eigen3 and libfranka 0.21.3 are separate build dependencies.
+numpy==2.2.6
+scipy==1.15.3

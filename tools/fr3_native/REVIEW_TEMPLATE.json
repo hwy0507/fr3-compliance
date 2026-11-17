@@ -1,0 +1,33 @@
+{
+  "schema": "FR3_NATIVE_LAUNCH_V1",
+  "purpose": "Draft only: all review gates are false; not an authorization; current source evidence missing",
+  "proposal": "FR3_NATIVE_CARTESIAN_HOLD_V1",
+  "robot_ip": null,
+  "mode": "hold_only",
+  "contact_authorized": false,
+  "cpu": 2,
+  "issued_unix": 0,
+  "expires_unix": 0,
+  "operator_authorization": null,
+  "sources": {
+    "stiffness": {"path": null, "sha256": null},
+    "collision": {"path": null, "sha256": null}
+  },
+  "suggested_stiffness_K_axes": [300, 300, 800, 50, 50, 50],
+  "previous_stiffness": null,
+  "previous_stiffness_source": null,
+  "qualified_static_baseline_file": null,
+  "effective_collision_threshold_source": null,
+  "contact_point_and_force_measurement": null,
+  "review": {
+    "motion_authorized": false,
+    "stiffness_write_authorized": false,
+    "restore_authorized": false,
+    "previous_stiffness_verified": false,
+    "static_baseline_verified": false,
+    "tool_and_frames_verified": false,
+    "existing_collision_protection_verified": false,
+    "realtime_and_stopping_verified": false,
+    "onsite_ready": false
+  }
+}

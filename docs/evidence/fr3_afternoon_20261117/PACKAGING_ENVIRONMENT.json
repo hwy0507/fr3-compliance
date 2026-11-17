@@ -1,0 +1,10 @@
+{
+  "python": "3.10.22 | packaged by conda-forge | (main, Oct  6 2026, 23:02:24) [GCC 14.4.0]",
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "compiler": "g++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+  "libfranka_version_used_in_source_experiments": "0.21.3",
+  "hardware_commands_during_packaging": false,
+  "robot_parameters_written_during_packaging": false,
+  "environment_packages_installed": false
+}

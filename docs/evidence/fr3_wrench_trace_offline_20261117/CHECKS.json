@@ -1,0 +1,44 @@
+{
+  "scope": "Synthetic offline verification only; does not describe separate operator-authorized hardware sessions",
+  "hardware_connected_by_tests": false,
+  "motion_commands_sent_by_tests": false,
+  "robot_parameters_written_by_change": false,
+  "original_trajectory_and_guards_unchanged": [
+    "read_path",
+    "state_ok",
+    "start_ok",
+    "callback_start",
+    "command",
+    "evaluate",
+    "preview"
+  ],
+  "strict_optimized_compilation_passed": true,
+  "synthetic_trace_tests_passed": true,
+  "original_math_and_startup_tests_passed": true,
+  "plan_export_parser_regressions_passed": 4,
+  "address_or_control_not_invoked_in_tests": true,
+  "asan_ubsan_passed": true,
+  "leak_sanitizer_enabled": false,
+  "trace_fields_tested": [
+    "raw O/K wrench and nonfinite preservation",
+    "EE_T_K and joint state copies",
+    "fault/error and Reflex mode",
+    "bounded overflow without overwrite",
+    "CSV header/row correspondence",
+    "SDK-only fault tail",
+    "SDK limited-command alignment",
+    "empty trace and write failure"
+  ],
+  "source_sha256": {
+    "tools/fr3_taught_path.cpp": "ffee4175ab3772fa3fbd0967e53e46cc5bdc18a0d383e65be2928f0d90f053bd",
+    "tools/fr3_wrench_trace.hpp": "8da9df6675eb758eca534e7f4de00d023672fa4d963d8dc7e956c4f9269e9650",
+    "tools/test_fr3_wrench_trace_offline.cpp": "0eb3ee272bcb17b0f3dbdffdf14905e1cea9bc85298e182421f51f65557eec08",
+    "tools/test_fr3_taught_path_offline.cpp": "463e9ebdabf0f6f10af577b184c899c60b79b6fb754aac5f177a68aeaf44f077",
+    "tools/test_fr3_teaching_plans_offline.py": "370c2e6100442bce1dbb79e2966cc96d3e309fda5a248a9542643ad7ba70ecc1"
+  },
+  "limitations": [
+    "No physical force accuracy, causal calibration, real-time qualification or safety certification",
+    "Old missing wrench packets cannot be reconstructed",
+    "Raw hardware results are local only and excluded from this evidence"
+  ]
+}

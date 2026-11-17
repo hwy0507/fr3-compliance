@@ -1,0 +1,24 @@
+{
+  "scope": "Offline package checker environment failure, not a robot run",
+  "error": "Base Python lacked SciPy; failure at synthetic teaching-plan test import",
+  "failing_commands": [
+    {
+      "argv": [
+        "/home/airpig/miniforge3/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools",
+        "-p",
+        "test_fr3_teaching_plans_offline.py",
+        "-v"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "test_fr3_teaching_plans_offline (unittest.loader._FailedTest.test_fr3_teaching_plans_offline) ... ERROR\n\n======================================================================\nERROR: test_fr3_teaching_plans_offline (unittest.loader._FailedTest.test_fr3_teaching_plans_offline)\n----------------------------------------------------------------------\nImportError: Failed to import test module: test_fr3_teaching_plans_offline\nTraceback (most recent call last):\n  File \"/home/airpig/miniforge3/lib/python3.13/unittest/loader.py\", line 396, in _find_test_path\n    module = self._get_module_from_name(name)\n  File \"/home/airpig/miniforge3/lib/python3.13/unittest/loader.py\", line 339, in _get_module_from_name\n    __import__(name)\n    ~~~~~~~~~~^^^^^^\n  File \"/home/airpig/\u684c\u9762/hwy/compliance_control/fr3-compliance/tools/test_fr3_teaching_plans_offline.py\", line 14, in <module>\n    from scipy.interpolate import make_interp_spline\nModuleNotFoundError: No module named 'scipy'\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (errors=1)\n"
+    }
+  ],
+  "fix": "Use existing sii Python3.10 environment with NumPy/SciPy; add early dependency check; no environment packages installed",
+  "upstream_numeric_sources_changed": false
+}

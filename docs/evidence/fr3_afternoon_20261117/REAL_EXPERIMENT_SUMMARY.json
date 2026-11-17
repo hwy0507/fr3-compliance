@@ -1,0 +1,522 @@
+{
+  "date": "2026-11-17",
+  "timezone": "Asia/Shanghai",
+  "source_code_commit": "b36ea725b872e1df12abd5e1196b6d565f672487",
+  "scope": "User-authorized publication of curated real experiment summaries; raw joint trajectories, zero references, credentials, NIC backups and live authorization files excluded",
+  "position_replay": {
+    "checked_at": "2026-11-17T14:50:08.654326+08:00",
+    "sequence_completed": true,
+    "parameters_written": false,
+    "recovery_called": false,
+    "gripper_commands_sent": false,
+    "automatic_repeat": false,
+    "post_state": "Idle, current/last errors empty",
+    "config_unchanged": true,
+    "phases": {
+      "replay": {
+        "completed": true,
+        "duration_s": 60.07300000000032,
+        "callback_samples": 60066,
+        "peak_measured_joint_speed_deg_s": 21.887378761346294,
+        "peak_K_force_norm_N": 8.50754303697472,
+        "peak_K_moment_norm_Nm": 1.4493984724504287,
+        "max_period_s": 0.002,
+        "success_rate_mean_excluding_initial": 0.9957906626865131,
+        "success_rate_min_excluding_initial": 0.8333333134651184,
+        "error_frames": 0,
+        "max_position_command_tracking_error_deg": 0.11041033574148809,
+        "wrench_log_sha256": "dde8cdbeb7894bc434a39eac86f478ba6200a24ed9e5bb33a2c1c3e60de72ed3",
+        "motion_log_sha256": "c282dbd12ae15e88d250aa34d29f6d3df1381d7fc12186c414606354f1bf885a"
+      },
+      "return": {
+        "completed": true,
+        "duration_s": 75.2510000000002,
+        "callback_samples": 75239,
+        "peak_measured_joint_speed_deg_s": 2.45774133343495,
+        "peak_K_force_norm_N": 6.544660068403794,
+        "peak_K_moment_norm_Nm": 4.404233450188407,
+        "max_period_s": 0.003,
+        "success_rate_mean_excluding_initial": 0.9939020214047157,
+        "success_rate_min_excluding_initial": 0.9300000071525574,
+        "error_frames": 0,
+        "max_position_command_tracking_error_deg": 0.017238322453761622,
+        "wrench_log_sha256": "1cff98abfa03a3d8951d15d62ebe1bd9aa623f7f369448779e07028f4d5d0c6a",
+        "motion_log_sha256": "f24c38c91985383f78142df3ea2102900f5424d5a0dd3b69475ed57b411c1aac"
+      }
+    },
+    "final_max_zero_error_deg": 0.00705154888434395,
+    "post_K_force_norm_mean_N": 1.4334824392375376,
+    "post_K_moment_norm_mean_Nm": 0.8133964631564261,
+    "scope": "One supervised original-tempo position replay followed by one separately checked slow return. No VMC or grasping; no force calibration or general safety certification."
+  },
+  "cable_event": {
+    "operator_reported_taut_cable_slackened": true,
+    "before_to_after_slackening_max_q_change_deg": 0.015435569691633897,
+    "before_K_moment_norm_mean_Nm": 1.641307960300907,
+    "after_K_moment_norm_mean_Nm": 0.6828935109684111,
+    "interpretation": "Taut cable is a real external load even with no human/object contact. Nearly unchanged pose with lower moment after slackening supports a cable contribution. Successful later motion supports mitigation, but different starts/speeds and remaining static residual prevent unique causal attribution or calibration acceptance.",
+    "earlier_fault_tail_not_recoverable": true
+  },
+  "earlier_reflex": {
+    "checked_at": "2026-11-17T14:22:08.016035+08:00",
+    "planned_duration_s": 75.0,
+    "logged_motion_duration_s": 56.555999999958914,
+    "reported_fault": "cartesian_reflex",
+    "last_callback_K_force_norm_N": 21.575226445296497,
+    "last_callback_K_moment_norm_Nm": 8.206412291567467,
+    "current_effective_collision_threshold_values_verified": false,
+    "limitations": [
+      "Only initial/first/last full RobotState snapshots were logged; no per-cycle wrench trace to reconstruct onset/trigger axis",
+      "Last delivered callback precedes SDK reflex exception; zero flags there do not negate the later protective stop",
+      "Post-read Idle and empty error fields are observations only; this agent sent no recovery command and cannot establish why error fields cleared",
+      "Current threshold values and threshold frame conventions not read back",
+      "Full-arm environment/self-contact, cable load, friction, torque sensor drift and exact payload not independently measured",
+      "No additional motion attempted"
+    ]
+  },
+  "native_attempts": [
+    {
+      "run_id": "execute_guiding_90_01",
+      "result": {
+        "control_entered": "1",
+        "stiffness_write_attempted": "1",
+        "stiffness_applied": "1",
+        "restore_attempted": "0",
+        "restore_succeeded": "0",
+        "sdk_control_exception": "0",
+        "trial_stiffness_retained": "1",
+        "free_guiding_requested": "1",
+        "minimum_success_rate": "0.9",
+        "collision_settings_written": "false",
+        "original_stiffness_verified": "0",
+        "collision_values_verified": "0",
+        "fault": "5",
+        "phase": "5",
+        "worker_fault_counts_valid": "1",
+        "worker_minor_fault_delta": "93",
+        "worker_major_fault_delta": "0",
+        "primary_error": "native hold stopped; inspect fault and trace; no automatic retry"
+      },
+      "minimum_success_rate": 0.9,
+      "max_receive_period_s": 0.002,
+      "cpu": 21,
+      "evidence": [
+        {
+          "path_relative_to_local_artifacts": "fr3_native_retain_trial_20261117_01/execute_guiding_90_01/result.txt",
+          "sha256": "8bf317b8aeec68cf70d82ba4200f1a784c3d3fcac26c09de85f3da2731f03d46",
+          "raw_published": false
+        },
+        {
+          "path_relative_to_local_artifacts": "fr3_native_retain_trial_20261117_01/execute_guiding_90_01/wrench.csv",
+          "sha256": "a46f258e061c2cb57f01ad8d50e4e3c949746a0022887ccc5ea886c5b82368f1",
+          "raw_published": false
+        }
+      ],
+      "elapsed_robot_s": 4.6379999999990105,
+      "callback_rows": 4635,
+      "last_success_rate": 0.9700000286102295,
+      "last_dt_s": 0.003,
+      "last_sdk_errors": 0
+    },
+    {
+      "run_id": "execute_guiding_90_gap5_01",
+      "result": {
+        "control_entered": "0",
+        "stiffness_write_attempted": "0",
+        "stiffness_applied": "0",
+        "restore_attempted": "0",
+        "restore_succeeded": "0",
+        "sdk_control_exception": "0",
+        "trial_stiffness_retained": "0",
+        "free_guiding_requested": "1",
+        "minimum_success_rate": "0.9",
+        "maximum_callback_period_s": "0.005",
+        "collision_settings_written": "false",
+        "original_stiffness_verified": "0",
+        "collision_values_verified": "0",
+        "fault": "0",
+        "phase": "5",
+        "worker_fault_counts_valid": "0",
+        "worker_minor_fault_delta": "174",
+        "worker_major_fault_delta": "0",
+        "primary_error": "absolute baseline above startup bound"
+      },
+      "minimum_success_rate": 0.9,
+      "max_receive_period_s": 0.005,
+      "cpu": 21,
+      "evidence": [
+        {
+          "path_relative_to_local_artifacts": "fr3_native_retain_trial_20261117_01/execute_guiding_90_gap5_01/result.txt",
+          "sha256": "709788713cdaca619bc67d921183acec171f8cd63a8322e9b2a17f218b94f307",
+          "raw_published": false
+        },
+        {
+          "path_relative_to_local_artifacts": "fr3_native_retain_trial_20261117_01/execute_guiding_90_gap5_01/wrench.csv",
+          "sha256": "dbadf07553d891a22de3d01e3ead74844721f41ba896023e834ce7fb359ccec2",
+          "raw_published": false
+        }
+      ]
+    },
+    {
+      "run_id": "execute_guiding_90_gap5_02",
+      "result": {
+        "control_entered": "1",
+        "stiffness_write_attempted": "1",
+        "stiffness_applied": "1",
+        "restore_attempted": "0",
+        "restore_succeeded": "0",
+        "sdk_control_exception": "0",
+        "trial_stiffness_retained": "1",
+        "free_guiding_requested": "1",
+        "minimum_success_rate": "0.9",
+        "maximum_callback_period_s": "0.005",
+        "collision_settings_written": "false",
+        "original_stiffness_verified": "0",
+        "collision_values_verified": "0",
+        "fault": "0",
+        "phase": "4",
+        "worker_fault_counts_valid": "1",
+        "worker_minor_fault_delta": "93",
+        "worker_major_fault_delta": "0"
+      },
+      "minimum_success_rate": 0.9,
+      "max_receive_period_s": 0.005,
+      "cpu": 21,
+      "evidence": [
+        {
+          "path_relative_to_local_artifacts": "fr3_native_retain_trial_20261117_01/execute_guiding_90_gap5_02/result.txt",
+          "sha256": "5593f1ce874364834a095cd5b3036e97537b2e50c16666b4efca3d8bead114c1",
+          "raw_published": false
+        },
+        {
+          "path_relative_to_local_artifacts": "fr3_native_retain_trial_20261117_01/execute_guiding_90_gap5_02/wrench.csv",
+          "sha256": "d93eaa58a2af5ddf94dbd1a90d9bf44a4952a5df040441d2f5cf83449e12086f",
+          "raw_published": false
+        }
+      ],
+      "elapsed_robot_s": 15.001000000000204,
+      "callback_rows": 15000,
+      "last_success_rate": 0.9700000286102295,
+      "last_dt_s": 0.001,
+      "last_sdk_errors": 0
+    },
+    {
+      "run_id": "execute_guiding_90_gap5_03",
+      "result": {
+        "control_entered": "1",
+        "stiffness_write_attempted": "1",
+        "stiffness_applied": "1",
+        "restore_attempted": "0",
+        "restore_succeeded": "0",
+        "sdk_control_exception": "0",
+        "trial_stiffness_retained": "1",
+        "free_guiding_requested": "1",
+        "minimum_success_rate": "0.9",
+        "maximum_callback_period_s": "0.005",
+        "collision_settings_written": "false",
+        "original_stiffness_verified": "0",
+        "collision_values_verified": "0",
+        "fault": "0",
+        "phase": "4",
+        "worker_fault_counts_valid": "1",
+        "worker_minor_fault_delta": "93",
+        "worker_major_fault_delta": "0"
+      },
+      "minimum_success_rate": 0.9,
+      "max_receive_period_s": 0.005,
+      "cpu": 21,
+      "evidence": [
+        {
+          "path_relative_to_local_artifacts": "fr3_native_retain_trial_20261117_01/execute_guiding_90_gap5_03/result.txt",
+          "sha256": "5593f1ce874364834a095cd5b3036e97537b2e50c16666b4efca3d8bead114c1",
+          "raw_published": false
+        },
+        {
+          "path_relative_to_local_artifacts": "fr3_native_retain_trial_20261117_01/execute_guiding_90_gap5_03/wrench.csv",
+          "sha256": "683b5e67eb7e8fc2e443cf488fa8c62d17bc2adec6f3366eaf8dbfefa390649d",
+          "raw_published": false
+        }
+      ],
+      "elapsed_robot_s": 15.000999999998385,
+      "callback_rows": 15001,
+      "last_success_rate": 0.9900000095367432,
+      "last_dt_s": 0.001,
+      "last_sdk_errors": 0
+    },
+    {
+      "run_id": "execute_hold_01",
+      "result": {
+        "control_entered": "1",
+        "stiffness_write_attempted": "1",
+        "stiffness_applied": "1",
+        "restore_attempted": "0",
+        "restore_succeeded": "0",
+        "sdk_control_exception": "0",
+        "trial_stiffness_retained": "1",
+        "free_guiding_requested": "0",
+        "collision_settings_written": "false",
+        "original_stiffness_verified": "0",
+        "collision_values_verified": "0",
+        "fault": "5",
+        "phase": "5",
+        "worker_fault_counts_valid": "1",
+        "worker_minor_fault_delta": "93",
+        "worker_major_fault_delta": "0",
+        "primary_error": "native hold stopped; inspect fault and trace; no automatic retry"
+      },
+      "minimum_success_rate": 0.99,
+      "max_receive_period_s": 0.002,
+      "cpu": 2,
+      "evidence": [
+        {
+          "path_relative_to_local_artifacts": "fr3_native_retain_trial_20261117_01/execute_hold_01/result.txt",
+          "sha256": "39fd36668f21c551732761d2927b1cf8a9f6889f55c918483c376e191426e9f6",
+          "raw_published": false
+        },
+        {
+          "path_relative_to_local_artifacts": "fr3_native_retain_trial_20261117_01/execute_hold_01/wrench.csv",
+          "sha256": "f8576cdd0294e5e4d3244eca054b87607811df981e8d60f2560c4a89866cc665",
+          "raw_published": false
+        }
+      ],
+      "elapsed_robot_s": 0.1000000000003638,
+      "callback_rows": 101,
+      "last_success_rate": 0.9800000190734863,
+      "last_dt_s": 0.001,
+      "last_sdk_errors": 0
+    },
+    {
+      "run_id": "execute_hold_02",
+      "result": {
+        "control_entered": "1",
+        "stiffness_write_attempted": "1",
+        "stiffness_applied": "1",
+        "restore_attempted": "0",
+        "restore_succeeded": "0",
+        "sdk_control_exception": "0",
+        "trial_stiffness_retained": "1",
+        "free_guiding_requested": "0",
+        "collision_settings_written": "false",
+        "original_stiffness_verified": "0",
+        "collision_values_verified": "0",
+        "fault": "5",
+        "phase": "5",
+        "worker_fault_counts_valid": "1",
+        "worker_minor_fault_delta": "93",
+        "worker_major_fault_delta": "0",
+        "primary_error": "native hold stopped; inspect fault and trace; no automatic retry"
+      },
+      "minimum_success_rate": 0.99,
+      "max_receive_period_s": 0.002,
+      "cpu": 2,
+      "evidence": [
+        {
+          "path_relative_to_local_artifacts": "fr3_native_retain_trial_20261117_01/execute_hold_02/result.txt",
+          "sha256": "39fd36668f21c551732761d2927b1cf8a9f6889f55c918483c376e191426e9f6",
+          "raw_published": false
+        },
+        {
+          "path_relative_to_local_artifacts": "fr3_native_retain_trial_20261117_01/execute_hold_02/wrench.csv",
+          "sha256": "04afeeec63f476ed7a339b25e8d98b587e4f82c17049c0ce360ee6aab618b13a",
+          "raw_published": false
+        }
+      ],
+      "elapsed_robot_s": 0.5450000000000728,
+      "callback_rows": 546,
+      "last_success_rate": 0.9800000190734863,
+      "last_dt_s": 0.001,
+      "last_sdk_errors": 0
+    },
+    {
+      "run_id": "execute_hold_03",
+      "result": {
+        "control_entered": "1",
+        "stiffness_write_attempted": "1",
+        "stiffness_applied": "1",
+        "restore_attempted": "0",
+        "restore_succeeded": "0",
+        "sdk_control_exception": "0",
+        "trial_stiffness_retained": "1",
+        "free_guiding_requested": "0",
+        "minimum_success_rate": "0.95",
+        "collision_settings_written": "false",
+        "original_stiffness_verified": "0",
+        "collision_values_verified": "0",
+        "fault": "5",
+        "phase": "5",
+        "worker_fault_counts_valid": "1",
+        "worker_minor_fault_delta": "93",
+        "worker_major_fault_delta": "0",
+        "primary_error": "native hold stopped; inspect fault and trace; no automatic retry"
+      },
+      "minimum_success_rate": 0.95,
+      "max_receive_period_s": 0.002,
+      "cpu": 2,
+      "evidence": [
+        {
+          "path_relative_to_local_artifacts": "fr3_native_retain_trial_20261117_01/execute_hold_03/result.txt",
+          "sha256": "59476c45c3d0bce427ee16ebdb036d216d1a7c48d34d79d29452e5f700a55a1b",
+          "raw_published": false
+        },
+        {
+          "path_relative_to_local_artifacts": "fr3_native_retain_trial_20261117_01/execute_hold_03/wrench.csv",
+          "sha256": "3779ea6b9da40632b59d1a01cdaf0a2191c00c7465d42d8a128258114e2b0f3f",
+          "raw_published": false
+        }
+      ],
+      "elapsed_robot_s": 2.9390000000003056,
+      "callback_rows": 2940,
+      "last_success_rate": 0.9399999976158142,
+      "last_dt_s": 0.001,
+      "last_sdk_errors": 0
+    },
+    {
+      "run_id": "execute_hold_04_cpu21",
+      "result_present": false,
+      "live_started_marker_present": false,
+      "note": "pending confirmation attempt; no completed control receipt"
+    },
+    {
+      "run_id": "execute_operator_01",
+      "result": {
+        "control_entered": "1",
+        "stiffness_write_attempted": "1",
+        "stiffness_applied": "1",
+        "restore_attempted": "0",
+        "restore_succeeded": "0",
+        "sdk_control_exception": "0",
+        "trial_stiffness_retained": "1",
+        "free_guiding_requested": "1",
+        "minimum_success_rate": "0.9",
+        "maximum_callback_period_s": "0.005",
+        "session_timeout_s": "15",
+        "operator_ended": "1",
+        "trace_rows": "130234",
+        "trace_overflow": "0",
+        "trace_pending": "0",
+        "callback_total_count": "130234",
+        "callback_total_us": "9.82486e+06",
+        "callback_max_us": "291.726",
+        "callback_timing_rows": "64010",
+        "collision_settings_written": "false",
+        "original_stiffness_verified": "0",
+        "collision_values_verified": "0",
+        "fault": "8",
+        "phase": "5",
+        "worker_fault_counts_valid": "1",
+        "worker_minor_fault_delta": "93",
+        "worker_major_fault_delta": "0",
+        "primary_error": "native hold stopped; inspect fault and trace; no automatic retry"
+      },
+      "minimum_success_rate": 0.9,
+      "max_receive_period_s": 0.005,
+      "cpu": 21,
+      "evidence": [
+        {
+          "path_relative_to_local_artifacts": "fr3_native_retain_trial_20261117_01/execute_operator_01/result.txt",
+          "sha256": "2fc7c1d2fa8ed8ae35cd151a7021f9220f49c37557295bb03603d8d0e08a0daf",
+          "raw_published": false
+        },
+        {
+          "path_relative_to_local_artifacts": "fr3_native_retain_trial_20261117_01/execute_operator_01/wrench.csv",
+          "sha256": "b50c00f542840d17f63581b66c9b36ffb93db930fae8702be9c5d5dc1d729dd8",
+          "raw_published": false
+        }
+      ],
+      "elapsed_robot_s": 130.26000000000022,
+      "callback_rows": 130234,
+      "last_success_rate": 1.0,
+      "last_dt_s": 0.001,
+      "last_sdk_errors": 0
+    }
+  ],
+  "operator_drag_last_frame": {
+    "row": 130233,
+    "F_N": 1.1642100147518843,
+    "M_K_Nm": 0.6745082279978128,
+    "M_EE_Nm": 0.6745082279978128,
+    "deltaF_K_N": 1.0285095239753317,
+    "deltaM_K_Nm": 0.2513003655758774,
+    "deltaF_EE_N": 1.0285095239753317,
+    "deltaM_EE_approx_Nm": 0.2513003655758774,
+    "delta_vertical_N": 0.3738966339854751,
+    "max_external_joint_Nm": 0.7152096033096313
+  },
+  "moment10_startup": {
+    "frames": 1001,
+    "duration_s": 1.0010000000002037,
+    "force_mean_N": 1.9066864418718226,
+    "force_min_N": 1.7959571775381211,
+    "force_max_N": 1.9911094505131723,
+    "moment_mean_Nm": 1.0003983244579024,
+    "moment_min_Nm": 0.9586662764610288,
+    "moment_max_Nm": 1.0362350351870946,
+    "moment_over_startup_1Nm_frames": 508,
+    "force_over_startup_2N_frames": 0,
+    "stiffness_written": false,
+    "control_entered": false,
+    "automatic_retry": false
+  },
+  "latest_load_receipt": "control_entered=0\nstiffness_write_attempted=0\nstiffness_applied=0\nrestore_attempted=0\nrestore_succeeded=0\nsdk_control_exception=0\ntrial_stiffness_retained=0\nfree_guiding_requested=1\nminimum_success_rate=0.9\nmaximum_callback_period_s=0.005\nrelative_moment_limit_nm=1\nsession_timeout_s=15\noperator_ended=1\ntrace_rows=0\ntrace_overflow=0\ntrace_pending=0\ncallback_total_count=0\ncallback_total_us=0\ncallback_max_us=0\ncallback_timing_rows=0\ncollision_settings_written=false\noriginal_stiffness_verified=0\ncollision_values_verified=0\nfault=0\nfault_reason=none\nphase=5\nworker_fault_counts_valid=0\nworker_minor_fault_delta=172\nworker_major_fault_delta=0\nprimary_error=absolute baseline above startup bound\n",
+  "latest_known_tool_configuration": {
+    "m_total_kg": 1.190999984741211,
+    "center_of_mass_in_flange_m": [
+      0.009999999776482582,
+      0.0,
+      0.08100000023841858
+    ],
+    "actual_mass_and_center_independently_verified": false
+  },
+  "latest_session_end": {
+    "ended": true,
+    "control_entered": false,
+    "stiffness_written": false,
+    "reason": "Static baseline moment exceeds original startup bound",
+    "automatic_retry": false,
+    "post_idle_no_error": true,
+    "cheese_resumed": true
+  },
+  "reference_point_note": "Contact failure uses rotated K-origin SDK moment and saved K baseline. Do not subtract this baseline from O-origin diagnostic moment; EE_T_K translation was zero in this record.",
+  "source_references": [
+    {
+      "path_relative_to_local_artifacts": "fr3_full_replay_return_20261117_01/SEQUENCE_RESULT.json",
+      "sha256": "71d9ab7772679c91524cae7bc7f06a5313785f0216cd67f2172920b2f5eb29b5",
+      "raw_published": false
+    },
+    {
+      "path_relative_to_local_artifacts": "fr3_full_replay_return_20261117_01/CABLE_AND_LOGGING_DIAGNOSIS.json",
+      "sha256": "b3be6a7fad9226c181e2812a78ec3fd204127b99ae0a30e399f90b74821a407f",
+      "raw_published": false
+    },
+    {
+      "path_relative_to_local_artifacts": "fr3_slow_return_20261117_01/REFLEX_DIAGNOSIS.json",
+      "sha256": "d90e2bc41701467615f38b619186eee7c8b495643de11fc13d322bfee62958e2",
+      "raw_published": false
+    },
+    {
+      "path_relative_to_local_artifacts": "fr3_native_retain_trial_20261117_01/operator_01_failure_analysis.json",
+      "sha256": "7cbfde2d9579e918ceaa590b8615d82dda13c9909567851392030cb1ee97a01d",
+      "raw_published": false
+    },
+    {
+      "path_relative_to_local_artifacts": "fr3_native_moment10_live_20261117_01/load_01_failed_summary.json",
+      "sha256": "cb1906c7944dc25240567e9a51d460173ba0dc9f016ff4e56a35596cc2519bb8",
+      "raw_published": false
+    },
+    {
+      "path_relative_to_local_artifacts": "fr3_native_moment10_live_20261117_01/execute_01/result.txt",
+      "sha256": "5c968b51b82aef2066361bb8ef0842c6082bb1fa2c05f42fd9468a4d54d1c941",
+      "raw_published": false
+    },
+    {
+      "path_relative_to_local_artifacts": "fr3_native_moment10_live_20261117_01/post_failure_static_analysis.json",
+      "sha256": "ea4d914c2f31dae73f0da3bfbb1d8f2d0b6c68ed14978ee896b16efc39b43cbd",
+      "raw_published": false
+    },
+    {
+      "path_relative_to_local_artifacts": "fr3_native_moment10_live_20261117_01/execute_01/CONTROL_ENDED.json",
+      "sha256": "12827dfbce1534ef1a17231b7c11dc96770c5631cc967cd262504b39085226d4",
+      "raw_published": false
+    }
+  ]
+}
