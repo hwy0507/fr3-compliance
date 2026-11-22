@@ -13,3 +13,6 @@ artifacts/
 *.avi
 *.mkv
 *.mp4
+
+# 允许 code11.22 内的压缩包
+!code11.22/*.tar.gz
