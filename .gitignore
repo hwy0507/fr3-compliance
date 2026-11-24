@@ -16,3 +16,6 @@ artifacts/
 
 # 允许 code11.22 内的压缩包
 !code11.22/*.tar.gz
+
+# User-authorized synchronized ESN demo excerpt
+!docs/evidence/camera_esn_sync_20261124/contact_highlight.mp4

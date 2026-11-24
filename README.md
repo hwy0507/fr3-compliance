@@ -1,7 +1,13 @@
 # FR3 Compliance
 
 Franka Research 3 的FCI原生阻抗/有限随动准备、示教与位置重放、通信/受力诊断，以及既有ESN64/16柔顺控制候选。
-**已做过位置重放和原生阻抗保持，免按钮自由拖动尚未验证通过，沿轨迹VMC/ESN接触实验尚未完成。**
+**2026-11-24 更新：128 维 ESN 已完成真实往返接触实验与相机同步记录；下方 11-17 内容为当时的历史状态，不代表新实验结论。**
+
+## 相机与神经元同步交接（2026-11-24）
+
+- [交接说明、实验结果与尚未完成的标定](docs/CAMERA_ESN_SYNC_HANDOFF_20261124.md)
+- [源码、构建、ESN 开关和融合视频生成](tools/camera_esn_sync/README.md)
+- [8 秒真实融合视频](docs/evidence/camera_esn_sync_20261124/contact_highlight.mp4)
 
 ## 今天下午的完整交接
 

@@ -1,0 +1,12 @@
+{
+  "final_modes": [
+    "RobotMode.Idle"
+  ],
+  "final_current_errors": "[]",
+  "final_last_motion_errors": "[]",
+  "max_final_dq_rad_s": 0.0029932353645563126,
+  "callbacks": 39728,
+  "max_callback_dt_s": 0.002,
+  "max_compute_us": 405.058,
+  "min_control_success_after_1s": 0.8899999856948853
+}

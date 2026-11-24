@@ -1,0 +1,24 @@
+{
+  "camera_esn_full.mp4": {
+    "decoded_frames": 1161,
+    "fps": 30.0,
+    "duration_s": 38.7,
+    "shape": [
+      960,
+      1280,
+      3
+    ],
+    "shape_verified_from_decoded_frame": true
+  },
+  "contact_highlight.mp4": {
+    "decoded_frames": 240,
+    "fps": 30.0,
+    "duration_s": 8.0,
+    "shape": [
+      960,
+      1280,
+      3
+    ],
+    "shape_verified_from_decoded_frame": true
+  }
+}

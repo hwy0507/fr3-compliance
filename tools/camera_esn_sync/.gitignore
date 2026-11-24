@@ -1,0 +1,6 @@
+artifacts/
+__pycache__/
+*.pyc
+fr3_demo/profile.json
+fr3_demo/active.json
+*.lock

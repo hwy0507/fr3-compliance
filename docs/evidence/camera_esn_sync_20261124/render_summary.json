@@ -1,0 +1,22 @@
+{
+  "session": "/home/airpig/\u684c\u9762/hwy/compliance_control/artifacts/fr3_camera_sync_20261124/sessions/session_7lj6ah9j",
+  "frames": 1161,
+  "fps": 30,
+  "video_duration_s": 38.7,
+  "source_camera_frames": 1261,
+  "source_policy_samples": 969,
+  "directly_logged_states": true,
+  "synthetic_data": false,
+  "force_input_peak_N": 20.471033669973036,
+  "force_peak_elapsed_s": 7.240000000000752,
+  "max_pair_delta_ms": 20.019047,
+  "invalid_output_frames": 0,
+  "head_tail_camera_frames_trimmed": 100,
+  "camera_sequence_gaps": 0,
+  "highlight_seconds_in_full_video": [
+    4.219609557,
+    12.219609557
+  ],
+  "clock_alignment_is_not_physical_latency_calibration": true,
+  "policy_csv_sha256": "1aec498a6daab3c2e7c4c6e5c2798f09a7025ae5124bb4f3328e93a15555a295"
+}

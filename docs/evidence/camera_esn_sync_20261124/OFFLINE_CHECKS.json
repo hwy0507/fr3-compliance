@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-24",
+  "robot_connected": false,
+  "camera_opened": false,
+  "robot_parameters_modified": false,
+  "controller_compiled_not_executed": true,
+  "camera_compiled_not_executed": true,
+  "launcher_tests_passed": 16,
+  "sync_tests_passed": 13,
+  "local_profile_and_pose_hash_check_passed": true,
+  "candidate_binary_matches_actual_experiment": true,
+  "candidate_binary_sha256": "f81a6dd2cdd986fdad1da0a3372943016343eb7f4e991d7cfa648152790890c3",
+  "published_video_identical_to_user_selected_file": true,
+  "video_sha256": "9a88559705115cf7249a4b67ce1eb0c691c89e08dae98e828834b27f061f652a",
+  "policy_regression": "POLICY_REGRESSION.json",
+  "render_regression": "RENDER_RECHECK.json",
+  "hardware_test_of_packaged_launcher": false
+}

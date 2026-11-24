@@ -1,0 +1,36 @@
+{
+  "schema": "FR3_DEMO_FIXED_ESN_V1",
+  "robot_ip": "172.16.0.2",
+  "binary": "/home/airpig/桌面/hwy/compliance_control/artifacts/fr3_esn_review_20261124/franka-fci-suite/build-local/esn_yield_roundtrip_diag_20261124",
+  "binary_sha256": "c822bdf5b3e59afb01654388e5d2bdfe5ab80e2234f7611867244023c7e36427",
+  "review_root": "/home/airpig/桌面/hwy/compliance_control/artifacts/fr3_esn_review_20261124",
+  "run_root": "/home/airpig/桌面/hwy/compliance_control/artifacts/fr3_esn_review_20261124/demo_runs",
+  "expected_home": "/home/airpig",
+  "poses": {
+    "home": {
+      "path": "/home/airpig/franka-poses/home.json",
+      "sha256": "cd4b026ad0ca5fc3611c6975d27278730eba520b5b62127a354c4ecae5f503ce"
+    },
+    "pos2": {
+      "path": "/home/airpig/franka-poses/pos2.json",
+      "sha256": "179b17f8935024454ccd59afa8d3c75ddab3f731d6c6ec407bf370b8d438fe17"
+    }
+  },
+  "nominal_speed_rad_s": "0.105",
+  "collision_profile": "normal",
+  "cpu": "21",
+  "esn_enabled": true,
+  "continuous_cycle": true,
+  "automatic_approach": false,
+  "automatic_recovery_or_retry": false,
+  "calibration": "required each run; unchanged in controller",
+  "joint_stiffness_during_motion_Nm_rad": [
+    300,
+    300,
+    300,
+    300,
+    300,
+    300,
+    300
+  ]
+}

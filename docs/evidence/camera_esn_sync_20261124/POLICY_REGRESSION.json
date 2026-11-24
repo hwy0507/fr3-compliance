@@ -1,0 +1,8 @@
+{
+  "rows": 1050,
+  "max_action_error": 0.00014901325143390487,
+  "max_capture_ns_offline_only": 2337,
+  "robot_connected": false,
+  "synthetic_clock_experiment": true,
+  "max_reservoir_error_against_previous_regression": 0.0
+}

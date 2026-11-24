@@ -1,0 +1,16 @@
+{
+  "camera_frames": 1261,
+  "policy_samples": 969,
+  "valid_matches": 1161,
+  "unmatched_or_invalid_frames": 100,
+  "max_timestamp_pair_delta_ms": 20.019047,
+  "mean_timestamp_pair_delta_ms": 9.99502785615848,
+  "camera_sequence_gaps": 0,
+  "max_policy_gap_ms": 42.621851,
+  "camera_timestamp_sources": [
+    "SOE"
+  ],
+  "synthetic_policy_data": false,
+  "measured_physical_exposure_to_robot_sensor_error": false,
+  "note": "Pair deltas are sampling alignment, not a calibrated physical latency bound; callback time is host receipt, not sensor acquisition."
+}
