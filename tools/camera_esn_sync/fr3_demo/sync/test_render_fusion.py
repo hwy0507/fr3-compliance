@@ -12,7 +12,58 @@ for mod_name in ('cv2', 'imageio_ffmpeg'):
     if mod_name not in sys.modules:
         sys.modules[mod_name] = types.ModuleType(mod_name)
 
-from render_fusion import draw_dashed_polyline, fr3_fk_xyz, load_ee_trajectory, load_reference_trajectory, project_3d_to_camera, project_xy_box
+from render_fusion import draw_dashed_polyline, fr3_fk_xyz, load_ee_trajectory, load_measured_joint_torques, load_reference_trajectory, project_3d_to_camera, project_xy_box
+
+
+class MeasuredTorqueTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.diag = Path(self.tmp.name)
+        self.policy = [
+            {'robot_time_s': '100.0', 'callback_monotonic_ns': '5000000000'},
+            {'robot_time_s': '100.04', 'callback_monotonic_ns': '5042000000'},
+        ]
+
+    def write_log(self, times, sensor_key='tau_J', bad_value=None):
+        fields = ['robot_time_s'] + [f'{sensor_key}_{j}' for j in range(7)] + ['tau_ext_0', 'tau_J_d_0']
+        with (self.diag / 'callback_states.csv').open('w', newline='') as f:
+            writer = csv.DictWriter(f, fieldnames=fields)
+            writer.writeheader()
+            for i, t in enumerate(times):
+                row = {'robot_time_s': t, 'tau_ext_0': 999, 'tau_J_d_0': 888}
+                row.update({f'{sensor_key}_{j}': -10 + i + j for j in range(7)})
+                if bad_value is not None:row[f'{sensor_key}_0'] = bad_value
+                writer.writerow(row)
+
+    def test_preserves_signed_sensor_samples_and_aligns_clocks(self):
+        self.write_log([99.99, 100., 100.01, 100.02, 100.03, 100.04, 100.05])
+        t, torque = load_measured_joint_torques(self.policy, self.diag)
+        # Five callback samples remain, rather than just the two policy ticks.
+        np.testing.assert_allclose(t, [0., .0105, .021, .0315, .042], atol=1e-10)
+        self.assertEqual(torque.shape, (5, 7))
+        np.testing.assert_allclose(torque[0], np.arange(-9, -2))
+        np.testing.assert_allclose(torque[-1], np.arange(-5, 2))
+
+    def test_requires_sensor_data_instead_of_estimated_torque(self):
+        with self.assertRaisesRegex(FileNotFoundError, 'Measured torque'):
+            load_measured_joint_torques(self.policy, self.diag)
+        self.write_log([100., 100.04], sensor_key='estimated')
+        with self.assertRaisesRegex(ValueError, 'tau_J_0..6'):
+            load_measured_joint_torques(self.policy, self.diag)
+
+    def test_rejects_invalid_values_and_backwards_time(self):
+        self.write_log([100., 100.04], bad_value='nan')
+        with self.assertRaisesRegex(ValueError, 'finite'):
+            load_measured_joint_torques(self.policy, self.diag)
+        self.write_log([100., 100.04, 100.02])
+        with self.assertRaisesRegex(ValueError, 'increasing'):
+            load_measured_joint_torques(self.policy, self.diag)
+
+    def test_rejects_truncated_log_without_extrapolating(self):
+        self.write_log([100.01, 100.04])
+        with self.assertRaisesRegex(ValueError, 'cover'):
+            load_measured_joint_torques(self.policy, self.diag)
 
 
 class RenderTrajectoryTests(unittest.TestCase):

@@ -54,7 +54,15 @@ python tools/camera_esn_sync/fr3_demo/sync/align.py \
 python tools/camera_esn_sync/fr3_demo/sync/render_fusion.py --session SESSION
 ```
 
-融合输入：camera.yuyv、camera_frames.csv、clock.json、complete.json；policy_sync.csv、policy_clock.json、policy_sync_status.json；session.json、execute_result.json 以及 alignment 文件。没有原始数据，不能从发布的 8 秒视频恢复完整数值状态。原数据在原主机保存，见交接说明。
+融合输入：camera.yuyv、camera_frames.csv、clock.json、complete.json；policy_sync.csv、policy_clock.json、policy_sync_status.json、callback_states.csv；session.json、execute_result.json 以及 alignment 文件。没有原始数据，不能从发布的 8 秒视频恢复完整数值状态。原数据在原主机保存，见交接说明。
+
+### 下方关节力矩曲线（2026-11-26 更新）
+
+全片不再显示“输入外力”数值或外力模长曲线。下方左侧改为七个关节的实测力矩，图例 J1–J7 对应 `callback_states.csv` 的 `tau_J_0`–`tau_J_6`，单位 Nm，数据由机器人状态 `tau_J` 直接记录。保留原始正负读数，不做零偏扣除、取模或接触门控清零；它包含机器人承载、运动等影响，无接触时也可以非零。`tau_ext_*` 是外力矩估计，`tau_J_d_*` 是期望力矩，均不会替代该图的实测数据。
+
+同事接手时，保留完整 session，尤其是 `cycle_*/execute_diagnostics/callback_states.csv` 与同目录 `policy_sync.csv`，然后按上面的 `render_fusion.py --session SESSION` 命令运行即可。力矩曲线保留回调采样率，用两份日志共有的 `robot_time_s` 对齐，再映射到策略的主机单调时钟；时间映射采用插值，力矩值本身不插值、不降为25 Hz。缺少日志/七路字段、非有限数值、时钟倒退或力矩日志未覆盖策略区间时会报错，不使用估计值补图。
+
+此改动只影响离线展示；控制器、ESN实际输入及接触门控逻辑保持原样。外力估计仍用于片段选取和接触状态标记，但不在画面中显示数值或曲线。`render_summary.json` 新增力矩字段来源、单位、样本数、时间对齐方式及原始日志 SHA256，便于核对。
 
 输出包括全有效区间视频、受力峰值前后片段、峰值 PNG、每个输出帧的来源映射及摘要。原始相机约 18.4 MB/s，录制前需要足够磁盘；录制期间不编码视频。相机被占用时关闭预览，不要强杀桌面服务。实时画面+神经元 GUI 尚未实现。
 
@@ -65,6 +73,6 @@ python tools/camera_esn_sync/fr3_demo/sync/render_fusion.py --session SESSION
 - `build_candidate.py`：验证基线源码 hash，四处插桩，编译控制器及相机工具，生成本地配置。
 - `start_synced.py` / `../start_esn.py`：相机先 READY，受控启动、基线、ESN 开关、停止、结束后配对。
 - `align.py`：按时间而非帧号配对，拒绝跨重启、时间倒退、超限缺口和记录溢出。
-- `render_fusion.py`：相机+神经元热图+外力/状态变化/输出曲线；异常退出及无 ESN 模式独立标注。
+- `render_fusion.py`：相机+神经元热图+七路实测关节力矩/状态变化/输出曲线；异常退出及无 ESN 模式独立标注。
 - `source/`：原控制器、参考轨迹、诊断日志、模型头文件及权重。
 - `test_*.py`、`test_policy_logger.cpp`、`clock_probe.cpp`：离线测试与明确标记的合成时钟探针。

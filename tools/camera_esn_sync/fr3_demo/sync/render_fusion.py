@@ -18,6 +18,37 @@ from matplotlib import colormaps
 def rows(path):
     with path.open() as f:return list(csv.DictReader(f))
 
+def load_measured_joint_torques(policy_rows, diag_dir):
+    """Read signed tau_J sensor channels at callback rate and map robot time to host time.
+
+    Only the timestamps are interpolated; torque samples are neither estimated,
+    zeroed nor replaced by commanded/estimated external torques.
+    """
+    path = Path(diag_dir) / 'callback_states.csv'
+    if not path.is_file():
+        raise FileNotFoundError(f'Measured torque plot requires {path} (robot_time_s, tau_J_0..6)')
+    callback_rows = rows(path)
+    fields = ['robot_time_s'] + [f'tau_J_{i}' for i in range(7)]
+    if not callback_rows or any(key not in callback_rows[0] for key in fields):
+        raise ValueError(f'{path} must contain robot_time_s and all seven tau_J_0..6 channels')
+    robot_t = np.array([float(r['robot_time_s']) for r in callback_rows])
+    torques = np.array([[float(r[f'tau_J_{i}']) for i in range(7)] for r in callback_rows])
+    policy_t = np.array([float(r['robot_time_s']) for r in policy_rows])
+    host_ns = np.array([int(r['callback_monotonic_ns']) for r in policy_rows], dtype=np.int64)
+    if (len(policy_t) < 2 or not np.isfinite(robot_t).all()
+            or not np.isfinite(policy_t).all() or not np.isfinite(torques).all()
+            or not np.all(np.diff(robot_t) > 0) or not np.all(np.diff(policy_t) > 0)
+            or not np.all(np.diff(host_ns) > 0)):
+        raise ValueError('Torque alignment requires finite samples and strictly increasing clocks')
+    if robot_t[0] > policy_t[0] or robot_t[-1] < policy_t[-1]:
+        raise ValueError('Measured torque log does not cover the policy time interval')
+    inside = (robot_t >= policy_t[0]) & (robot_t <= policy_t[-1])
+    if np.count_nonzero(inside) < 2:
+        raise ValueError('Not enough measured torque samples in the policy time interval')
+    host_s = (host_ns - host_ns[0]) / 1e9
+    times = np.interp(robot_t[inside], policy_t, host_s)
+    return times, torques[inside]
+
 def _mdh(a, alpha, d, theta):
     ct, st = np.cos(theta), np.sin(theta)
     ca, sa = np.cos(alpha), np.sin(alpha)
@@ -175,7 +206,8 @@ def main():
     ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--session',type=Path,required=True)
     ap.add_argument('--camera-calib',type=Path,default=None,help='Optional camera_calib.json for 3D-to-2D end-effector trajectory overlay')
     ap.add_argument('--ref-session',type=Path,default=None,help='Optional obstacle-free session directory for reference trajectory comparison')
-    args=ap.parse_args();root=args.session.resolve();out=root/'fusion';out.mkdir(exist_ok=False)
+    args=ap.parse_args();root=args.session.resolve();out=root/'fusion'
+    if out.exists():raise FileExistsError(f'Output directory already exists: {out}')
     camera=root/'camera';cycle=next(root.glob('cycle_*'));policy=cycle/'execute_diagnostics/policy_sync.csv'
     alignment=json.loads((root/'alignment/alignment.json').read_text())
     execution=json.loads((cycle/'execute_result.json').read_text())
@@ -185,6 +217,7 @@ def main():
     assert not pc['synthetic_test_data'] and pc['direct_reservoir_states']
     assert not json.loads((policy.parent/'policy_sync_status.json').read_text())['overflow']
     cr=rows(camera/'camera_frames.csv');pr=rows(policy);pairs=rows(root/'alignment/frame_policy_pairs.csv')
+    torque_t,torques=load_measured_joint_torques(pr,policy.parent)
     assert len(cr)==len(pairs)==json.loads((camera/'complete.json').read_text())['frames']
     n=len(cr);framebytes=640*480*2
     assert (camera/'camera.yuyv').stat().st_size==n*framebytes
@@ -239,17 +272,22 @@ def main():
     label(32,631,'录像与状态以最近时间戳关联；头尾无状态覆盖部分已裁剪。',17,muted)
     colors=['#293550','#d75f48','#138e85','#4479c7','#9b65b4','#c18b36','#70863d']
     boxes=[(54,713,312,868),(364,713,622,868),(674,713,932,868)]
-    values=[force[:,None],dh[:,None],actions]
-    limits=[(0,max(25,float(force.max())*1.1)),(0,max(.02,float(dh.max())*1.15)),(-1.05,1.05)]
-    titles=['ESN 输入外力 |F| · N','神经元状态变化 · RMS Δh','原始策略输出 · a0…a6']
+    torque_min,torque_max=float(torques.min()),float(torques.max())
+    torque_pad=max(1.0,(torque_max-torque_min)*.1)
+    values=[torques,dh[:,None],actions]
+    plot_times=[torque_t,t,t]
+    limits=[(min(0.,torque_min)-torque_pad,max(0.,torque_max)+torque_pad),(0,max(.02,float(dh.max())*1.15)),(-1.05,1.05)]
+    titles=['关节实测力矩 · Nm','神经元状态变化 · RMS Δh','原始策略输出 · a0…a6']
     plotted=[]
     for k,(box,ys,lim,title) in enumerate(zip(boxes,values,limits,titles)):
+        within=(plot_times[k]>=0)&(plot_times[k]<=duration)
+        plot_times[k]=plot_times[k][within];ys=ys[within]
         x0,y0,x1,y1=box;d.text((x0-8,674),title,font=subhead,fill=ink)
         d.rectangle(box,fill='white',outline='#d5dfe9')
         def position(x,y):return (int(x0+x/duration*(x1-x0)),int(y1-(y-lim[0])/(lim[1]-lim[0])*(y1-y0)))
         points=[]
         for j in range(ys.shape[1]):
-            xy=[position(x,y) for x,y in zip(t,ys[:,j])];points.append(xy)
+            xy=[position(x,y) for x,y in zip(plot_times[k],ys[:,j])];points.append(xy)
             d.line(xy,fill='#dbe2ea',width=1)
         plotted.append(points)
         for tick in (0,10,20,30):
@@ -259,8 +297,8 @@ def main():
         for y in [lim[0],lim[1]]:
             _,py=position(0,y);label(x0-40,py-9,f'{y:.2g}',13,muted)
         if k==0:
-            _,py=position(0,12);d.line((x0,py,x1,py),fill='#d4b394',width=1)
-            label(x1-72,py-21,'门控 12 N',13,muted)
+            _,py=position(0,0);d.line((x0,py,x1,py),fill='#d5dfe9',width=1)
+            for channel in range(7):label(x0+channel*36,696,f'J{channel+1}',13,colors[channel])
     traj_box=(984,713,1242,868)
     d.text((976,674),'末端运动轨迹 · XY (mm)',font=subhead,fill=ink)
     d.rectangle(traj_box,fill='white',outline='#d5dfe9')
@@ -274,6 +312,7 @@ def main():
     ff=imageio_ffmpeg.get_ffmpeg_exe()
     cmd=[ff,'-v','error','-f','rawvideo','-pix_fmt','rgb24','-s','1280x960','-r',str(fps),'-i','-',
          '-an','-c:v','libx264','-threads','2','-preset','fast','-crf','20','-pix_fmt','yuv420p','-movflags','+faststart',str(out/'camera_esn_full.mp4')]
+    out.mkdir(exist_ok=False)
     encoder=subprocess.Popen(cmd,stdin=subprocess.PIPE)
     manifest=[];peak=int(np.argmax(force));snapshot_saved=False
     try:
@@ -293,13 +332,14 @@ def main():
                 state=('接触门控：启用' if contact[pi] else '接触门控：未启用') if esn_enabled else 'ESN 旁路：仅记录'
                 d.rounded_rectangle((951,25,1248,67),radius=10,fill='#fce7dc' if contact[pi] else '#dff0ef')
                 label(970,30,state,22,'#ac482d' if contact[pi] else '#16776f')
-                label(720,538,f'输入外力  {force[pi]:5.2f} N',26)
                 label(720,578,f'状态变化 RMS  {dh[pi]:.4f}',19,muted)
                 label(720,620,f'配对差 Δt = {delta:+.2f} ms',19,muted)
                 for k,box in enumerate(boxes):
                     x0,y0,x1,y1=box
+                    current_s=(int(ct[ci])-int(pt[0]))/1e9
+                    stop=int(np.searchsorted(plot_times[k],current_s,side='right'))
                     for channel,pts in enumerate(plotted[k]):
-                        if pi>0:d.line(pts[:pi+1],fill=(['#cb6340','#3b6eae'][k] if k<2 else colors[channel]),width=2)
+                        if stop>1:d.line(pts[:stop],fill=('#3b6eae' if k==1 else colors[channel]),width=2)
                     x=x0+(int(ct[ci])-int(pt[0]))/1e9/duration*(x1-x0)
                     d.line((x,y0,x,y1),fill=ink,width=1)
                 for idx_seg in range(pi):
@@ -350,6 +390,11 @@ def main():
        'invalid_output_frames':sum(not x['valid'] for x in manifest),
        'head_tail_camera_frames_trimmed':first+(n-1-last),'camera_sequence_gaps':alignment['camera_sequence_gaps'],
        'ee_trajectory_source':ee_source,
+       'joint_torque_source':'callback_states.csv:tau_J_0..6',
+       'joint_torque_units':'Nm',
+       'joint_torque_samples':len(torque_t),
+       'joint_torque_time_alignment':'robot_time_s mapped to policy callback CLOCK_MONOTONIC; values retained at callback rate',
+       'joint_torque_csv_sha256':hashlib.sha256((policy.parent/'callback_states.csv').read_bytes()).hexdigest(),
        'ref_trajectory_source':ref_source,
        'max_ref_deviation_mm':float(ref_dev_mm.max()) if ref_dev_mm is not None else None,
        'camera_overlay_calib':str(calib_path) if calib_path else None,
