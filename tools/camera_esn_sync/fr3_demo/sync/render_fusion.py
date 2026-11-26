@@ -232,7 +232,7 @@ def main():
     label(720,145,'固定色标 [-1, +1]；每格为一个状态分量',17,muted)
     cmap=colormaps['RdBu_r']
     gradient=np.linspace(1,-1,304)[:,None]
-    colorbar=Image.fromarray((cmap(gradient)[...,:3]*255).astype(np.uint8)).resize((14,304))
+    colorbar=Image.fromarray((cmap((gradient+1)/2)[...,:3]*255).astype(np.uint8)).resize((14,304))
     base.paste(colorbar,(1215,185));label(1233,181,'+1',15);label(1233,326,'0',15);label(1233,472,'−1',15)
     for r in range(8):label(689,190+38*r,str(r*16),13,muted)
     label(720,500,'按编号排列，不表示神经元空间拓扑',17,muted)
